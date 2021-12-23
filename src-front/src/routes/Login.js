@@ -10,7 +10,7 @@ function Login() {
   let [duration, setDuration] = useState("")
   let [Confirm, setConfirm] = useState(false)//
 
-  //let[del,setdel]= useState("")//
+  let[del,setdel]= useState("")// del
 
   function handleId(event) {setId((id= event.target.value)); }
   function handleType(event) {setType((type= event.target.value));}
@@ -18,7 +18,7 @@ function Login() {
   function handleLocation(event) {setLocation((location= event.target.value));}
   function handleTime(event) { setTime((time= event.target.value));}
   function handleDuration(event) {setDuration((duration= event.target.value))}
-  //function handleClickDel(event) {setdel((del= event.target.value))}//
+  //function handleClickDel3(event) {setdel((del= event.target.value))}//del
 function handleClick2(){
 let MyEvent ={
   id : id ,
@@ -42,31 +42,17 @@ url:'api/event/add',
 function handleClickDel(){
   axios({
     method:'delete',
-    url:"/api/event/delete/2",
-
-  })}
- // console.log(JSON.parse(JSON.stringify(MyEvent)));
+    url:"/api/event/delete/3",
+    
+  });}
+ // console.log(JSON.parse(JSON.stringify(MyEvent)));//del
   
 
     return (
    <div>
             <br></br> 
             <br></br> 
-            <br></br> 
-            <br></br> 
-           <form>
-            <label>Username : </label>   
-            <input type="text" placeholder="Enter Username" name="username" required/>
-            <br></br>  
-            <label>Password : </label>   
-            <input type="password" placeholder="Enter Password" name="password" required/> 
-            <br></br> 
-            <button type="submit">Login</button>  
-            <br></br> 
-            
-            <br></br>   
-                  
-            </form>
+           
      <br></br><br></br>
      <button type ="submit" onClick={()=>setConfirm (!Confirm)}>Add To Event  </button>
       {Confirm &&
@@ -99,7 +85,14 @@ function handleClickDel(){
          <br />
          <br />
          <input type="submit" value="Submit" onClick={handleClick2}></input>
+         <br></br>
+
+         {/* <label htmlFor="id">ID:</label> */}
+         <br />
+         {/* <input type="text" id="id" name="id" onChange={handleClickDel3} /> */}
+         <br />
          <input type="submit" value="Delete" onClick={handleClickDel}></input>
+         
          </form>}
          <br />
          <br />

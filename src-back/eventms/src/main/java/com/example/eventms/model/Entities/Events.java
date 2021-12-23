@@ -1,17 +1,19 @@
 package com.example.eventms.model.Entities;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
 @Table
 @Entity
 public class Events {
     @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String type;
     private String eventName;
     private String location;
     private String time;
     private String duration;
-
-//relationshep
 
 
     public Events(int id, String type, String eventName, String location, String time, String duration) {
