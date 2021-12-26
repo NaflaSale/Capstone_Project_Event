@@ -1,4 +1,6 @@
 package com.example.eventms.model.Entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +9,6 @@ import java.util.List;
 @Entity
 public class Events {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String type;
     private String eventName;
@@ -15,7 +16,13 @@ public class Events {
     private String time;
     private String duration;
 
+@OneToMany(mappedBy = "events")
+@JsonIgnore
+private List<Admins> items= new ArrayList<>();
 
+
+    public Events() {
+    }
     public Events(int id, String type, String eventName, String location, String time, String duration) {
         this.id = id;
         this.type = type;
@@ -23,10 +30,12 @@ public class Events {
         this.location = location;
         this.time = time;
         this.duration = duration;
+
     }
 
-    public Events() {
-    }
+
+    //
+
 
     public int getId() {
         return id;
@@ -75,16 +84,27 @@ public class Events {
     public void setDuration(String duration) {
         this.duration = duration;
     }
+//
+
+
+    public List<Admins> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Admins> items) {
+        this.items = items;
+    }
 
     @Override
     public String toString() {
-        return "Event{" +
+        return "Events{" +
                 "id=" + id +
                 ", type='" + type + '\'' +
                 ", eventName='" + eventName + '\'' +
                 ", location='" + location + '\'' +
                 ", time='" + time + '\'' +
                 ", duration='" + duration + '\'' +
+                ", items=" + items +
                 '}';
     }
 }

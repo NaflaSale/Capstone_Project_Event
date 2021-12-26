@@ -1,5 +1,6 @@
 package com.example.eventms.model.Entities;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -8,20 +9,25 @@ import java.util.List;
 
 @Table
 @Entity
-//REEE
-
 public class Admins {
 
     @Id
     private String adminname;
     private String password;
 
+    @ManyToOne
+    @JoinColumn(name = "event_id" , referencedColumnName = "id")
+    private Events events;
 
 
-    public Admins(String adminname, String password) {
+    public Admins(String adminname, String password, Events events) {
         this.adminname = adminname;
         this.password = password;
+        this.events = events;
     }
+
+
+    //
 
     public Admins() {
     }
@@ -41,7 +47,18 @@ public class Admins {
     public void setPassword(String password) {
         this.password = password;
     }
+ //
 
+    public Events getEvents() {
+        return events;
+    }
+
+    public void setEvents(Events events) {
+        this.events = events;
+    }
+
+
+    //
 
 
     @Override

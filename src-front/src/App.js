@@ -5,6 +5,7 @@ import { Outlet, Link } from "react-router-dom";
 import axios from "axios";
 //import './App.css';
 
+
  export default function App() {
         let [Confirm, setConfirm] = useState(false)
         let [Confirm2, setConfirm2] = useState(false)
@@ -34,6 +35,7 @@ import axios from "axios";
 
 //
 return(<div>
+        
         <nav>
         <Link to="/Home"><button>HomePage</button></Link>|{" "}
         <Link to="/Login"><button>Login</button></Link>|{" "}
@@ -52,7 +54,8 @@ return(<div>
             <br></br> 
             <br></br> 
             <br></br>
-            <button type ="submit" onClick={()=>setConfirm (!Confirm)}>Admin Login  </button>
+            <button type ="submit" onClick={()=>setConfirm (!Confirm)}>Admin..  </button> 
+            
             {Confirm &&
            <form>
             <label>AdminName : </label>   
@@ -61,9 +64,13 @@ return(<div>
             <label>Password : </label>   
             <input type="password" placeholder="Enter Password"  onChange={handlePassword} name="password" required/> 
             <br></br> 
-            <button type="submit" onClick={handleClickAdd}>Login</button>  
+            <button type="submit" onClick={handleClickAdd}>Registration</button> 
+
+            <button type="submit" >Sign in</button>  
+
             <br></br> </form> } 
-            <button type ="submit" onClick={()=>setConfirm2 (!Confirm)}>User Login  </button>
+            
+            <button type ="submit" onClick={()=>setConfirm2 (!Confirm2)}>User.. </button>
             {Confirm2 &&
            <form>
            <label>UserName : </label>   
@@ -72,7 +79,8 @@ return(<div>
            <label>Password : </label>   
            <input type="password" placeholder="Enter Password" name="password" required/> 
            <br></br> 
-           <button type="submit">Login</button>  
+           <button type="submit">Registration</button> 
+           <button type="submit">Sign in</button>  
            <br></br> </form> } 
            </div>
       

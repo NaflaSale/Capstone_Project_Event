@@ -18,7 +18,9 @@ function Login() {
   function handleLocation(event) {setLocation((location= event.target.value));}
   function handleTime(event) { setTime((time= event.target.value));}
   function handleDuration(event) {setDuration((duration= event.target.value))}
-  //function handleClickDel3(event) {setdel((del= event.target.value))}//del
+  function handleClickDel3(event) {setdel((del= event.target.value))}//del
+  //function deleteEventt(event) {setdel((del= event.target.value))}//del
+
 function handleClick2(){
 let MyEvent ={
   id : id ,
@@ -29,6 +31,7 @@ let MyEvent ={
   duration :duration,
    
 }
+
 console.log("in fun")
 console.log(MyEvent)
 axios({
@@ -40,14 +43,23 @@ url:'api/event/add',
 }
 
 function handleClickDel(){
+  // let MyEvent2 ={
+  //   id : id}
   axios({
     method:'delete',
     url:"/api/event/delete/3",
-    
+    //data:MyEvent2 ,
   });}
  // console.log(JSON.parse(JSON.stringify(MyEvent)));//del
-  
-
+ ////////////////////////
+//  deleteEvent = (id) => {
+//   axios.delete("/api/event/delete" + id).then(
+//       (response) => {
+//           console.log("Record Deleted Successfully");
+//           this.setState({
+//               events: this.state.events.filter(event => event.id !== id)
+//           });
+/////////////////////////////////
     return (
    <div>
             <br></br> 
@@ -87,12 +99,13 @@ function handleClickDel(){
          <input type="submit" value="Submit" onClick={handleClick2}></input>
          <br></br>
 
-         {/* <label htmlFor="id">ID:</label> */}
+         <label htmlFor="id">ID:</label>
          <br />
-         {/* <input type="text" id="id" name="id" onChange={handleClickDel3} /> */}
+         <input type="text" id="id" name="id" onChange={handleClickDel3} />
          <br />
          <input type="submit" value="Delete" onClick={handleClickDel}></input>
-         
+         {/* <input type="submit" value="Delete" onClick={deleteEvent}></input> */}
+
          </form>}
          <br />
          <br />

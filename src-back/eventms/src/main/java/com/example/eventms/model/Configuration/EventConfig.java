@@ -12,34 +12,34 @@ import java.util.List;
 public class EventConfig {
 
 
-    @Bean
-      CommandLineRunner commandLineRunner1(EventRepository repository){
-            return  args -> {
-                Events First=new Events(
-                        1,
-                        "Arts",
-                        "Graphics",
-                        "Aljouf",
-                        "21-Apr-2021",
-                        "Two hours"
-
-
-                );
-                Events Second= new Events(
-                       2,
-                       "Sports" ,
-                        "Match",
-                        "Arar",
-                        "22-Des-2021",
-                        "Two hours"
-
-
-                );
-
-                repository.saveAll(List.of(First,Second));
-
-            };
-        }
+//    @Bean
+//      CommandLineRunner commandLineRunner1(EventRepository repository){
+//            return  args -> {
+//                Events First=new Events(
+//                        1,
+//                        "Arts",
+//                        "Graphics",
+//                        "Aljouf",
+//                        "21-Apr-2021",
+//                        "Two hours"
+//
+//
+//                );
+//                Events Second= new Events(
+//                       2,
+//                       "Sports" ,
+//                        "Match",
+//                        "Arar",
+//                        "22-Des-2021",
+//                        "Two hours"
+//
+//
+//                );
+//
+//                repository.saveAll(List.of(First,Second));
+//
+//            };
+//        }
     }
 
 
