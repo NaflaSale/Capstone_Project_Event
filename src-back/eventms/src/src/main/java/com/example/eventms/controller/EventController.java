@@ -40,9 +40,14 @@ public void registerNewEvent(@RequestBody Events event){
     eventService.addNewEvent(event);
 }
 //
+//    @DeleteMapping(path = "delete/{eventId}")
+//    public void deleteEvent(@PathVariable ("eventId") Integer eventId){
+//        eventService.deleteEvent(eventId);
+//    }
     @DeleteMapping(path = "delete/{eventId}")
-    public void deleteEvent(@PathVariable ("eventId") Integer eventId){
-        eventService.deleteEvent(eventId);
+    public void deleteEvent(@PathVariable ("eventId") String eventId){
+        int evenInt =Integer.parseInt(eventId);
+        eventService.deleteEvent(evenInt);
     }
 }
 

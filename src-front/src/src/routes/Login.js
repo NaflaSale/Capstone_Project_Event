@@ -9,8 +9,8 @@ function Login() {
   let [time, setTime] = useState("")
   let [duration, setDuration] = useState("")
   let [Confirm, setConfirm] = useState(false)//
-
   let[del,setdel]= useState("")// del
+  //let[dell,setdell]=useState("") //new
 
   function handleId(event) {setId((id= event.target.value)); }
   function handleType(event) {setType((type= event.target.value));}
@@ -18,8 +18,8 @@ function Login() {
   function handleLocation(event) {setLocation((location= event.target.value));}
   function handleTime(event) { setTime((time= event.target.value));}
   function handleDuration(event) {setDuration((duration= event.target.value))}
-  function handleClickDel3(event) {setdel((del= event.target.value))}//del
-  //function deleteEventt(event) {setdel((del= event.target.value))}//del
+  function handleClickDel3(event) {setdel((del= event.target.value))}//del TADAY
+  //function deleteEventt(event) {setdel((dell= event.target.value))}//del
 
 function handleClick2(){
 let MyEvent ={
@@ -42,24 +42,25 @@ url:'api/event/add',
 });
 }
 
-function handleClickDel(){
-  // let MyEvent2 ={
-  //   id : id}
-  axios({
-    method:'delete',
-    url:"/api/event/delete/3",
-    //data:MyEvent2 ,
-  });}
- // console.log(JSON.parse(JSON.stringify(MyEvent)));//del
- ////////////////////////
-//  deleteEvent = (id) => {
-//   axios.delete("/api/event/delete" + id).then(
-//       (response) => {
-//           console.log("Record Deleted Successfully");
-//           this.setState({
-//               events: this.state.events.filter(event => event.id !== id)
-//           });
-/////////////////////////////////
+// function handleClickDel(){
+//   // let MyEvent2 ={
+//   //   id : id}
+//   axios({
+//     method:'delete',
+//     url:"/api/event/delete/3",
+//     //data:MyEvent2 ,
+//   });}
+//delete today
+  function handleClickDel2(){
+    
+    axios({
+      method:'delete',
+      url:`/api/event/delete/${del}`,
+
+    });}
+
+
+ 
     return (
    <div>
             <br></br> 
@@ -96,15 +97,15 @@ function handleClickDel(){
          <input type="text" id="text" name="text" onChange={handleDuration} />
          <br />
          <br />
-         <input type="submit" value="Submit" onClick={handleClick2}></input>
+         <input type="submit" value="Add" onClick={handleClick2}></input>
          <br></br>
 
          <label htmlFor="id">ID:</label>
          <br />
          <input type="text" id="id" name="id" onChange={handleClickDel3} />
          <br />
-         <input type="submit" value="Delete" onClick={handleClickDel}></input>
-         {/* <input type="submit" value="Delete" onClick={deleteEvent}></input> */}
+         {/* <input type="submit" value="Delete" onClick={handleClickDel}></input> */}
+         <input type="submit" value="Delete" onClick={handleClickDel2}></input>
 
          </form>}
          <br />
