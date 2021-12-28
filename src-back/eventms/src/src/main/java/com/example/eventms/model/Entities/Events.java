@@ -15,7 +15,7 @@ public class Events {
     private String location;
     private String time;
     private String duration;
-
+    private String src;
 @OneToMany(mappedBy = "events")
 @JsonIgnore
 private List<Admins> items= new ArrayList<>();
@@ -23,14 +23,14 @@ private List<Admins> items= new ArrayList<>();
 
     public Events() {
     }
-    public Events(int id, String type, String eventName, String location, String time, String duration) {
+    public Events(int id, String type, String eventName, String location, String time, String duration , String src) {
         this.id = id;
         this.type = type;
         this.eventName = eventName;
         this.location = location;
         this.time = time;
         this.duration = duration;
-
+        this.src=src;
     }
 
 
@@ -84,7 +84,15 @@ private List<Admins> items= new ArrayList<>();
     public void setDuration(String duration) {
         this.duration = duration;
     }
-//
+
+    public String getSrc() {
+        return src;
+    }
+
+    public void setSrc(String src) {
+        this.src = src;
+    }
+    //
 
 
     public List<Admins> getItems() {
@@ -95,6 +103,19 @@ private List<Admins> items= new ArrayList<>();
         this.items = items;
     }
 
+//    @Override
+//    public String toString() {
+//        return "Events{" +
+//                "id=" + id +
+//                ", type='" + type + '\'' +
+//                ", eventName='" + eventName + '\'' +
+//                ", location='" + location + '\'' +
+//                ", time='" + time + '\'' +
+//                ", duration='" + duration + '\'' +
+//                ", items=" + items +
+//                '}';
+//    }
+
     @Override
     public String toString() {
         return "Events{" +
@@ -104,6 +125,7 @@ private List<Admins> items= new ArrayList<>();
                 ", location='" + location + '\'' +
                 ", time='" + time + '\'' +
                 ", duration='" + duration + '\'' +
+                ", src='" + src + '\'' +
                 ", items=" + items +
                 '}';
     }
