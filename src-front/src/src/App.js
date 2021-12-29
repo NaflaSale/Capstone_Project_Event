@@ -41,7 +41,7 @@ import axios from "axios";
 
 
 //
-return(<div>
+return(<div className="home">
         
         <nav>
         {/* <Link to="/Home"><button>HomePage</button></Link>|{" "} */}
@@ -51,6 +51,7 @@ return(<div>
         <Link to="/Login"><button>Login</button></Link>|{" "}
 
         <Link to="/Ticket"><button>Ticket </button></Link> |{" "}
+
 </nav><Outlet />
 
             <br></br> 

@@ -40,12 +40,13 @@ public class AdminController {
         }
 
 //
-////
-//    @GetMapping(path = "login")
-//   public String checkLogin(@RequestParam (name = "username") String username , @RequestParam (name = "password") String password ) {
-//     return adminService.getCheck(username,password);
 //
-//   }
+    @GetMapping(path = "login")
+   public String checkLogin(@RequestParam (name = "adminname") String adminname , @RequestParam (name = "password")
+            String password ) {
+     return adminService.getCheck(adminname,password);
+
+   }
     }
 
 

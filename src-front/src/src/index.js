@@ -54,6 +54,7 @@ import EventReview from "./routes/EventReview";
 import EventReviews from './routes/EventReviews';
 import Ticket from "./routes/Ticket";
 import Event from './routes/Event';
+import Admin from './routes/Admin';
 import {
   BrowserRouter,
   Routes,
@@ -87,7 +88,7 @@ ReactDOM.render(
 
         
        <Route path="Home" element={<Home />} /> 
-
+       <Route path="Admin" element={<Admin />} /> 
         {/* </Route> */}
         <Route path="Login" element={<Login />} />
         {/* <Route path="Events" element={<Events />} />// ADD/ */}

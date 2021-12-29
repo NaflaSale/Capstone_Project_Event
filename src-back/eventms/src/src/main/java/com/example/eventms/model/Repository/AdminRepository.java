@@ -10,8 +10,8 @@ public interface AdminRepository extends JpaRepository <Admins,String> {
 
 
 
-//    @Query("SELECT password FROM User WHERE username = :username")
-//   String findByUsername(@Param("username") String username);
+    @Query("SELECT password FROM Admins WHERE adminname = :adminname")
+   String findByUsername(@Param("adminname") String adminname);
 }
 
 

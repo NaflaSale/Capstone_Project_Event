@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import axios, { Axios } from "axios"
-//import { Card } from "stream-chat-react";
-import {  Link } from "react-router-dom";
 
 export default class AllEvent extends Component {
     constructor(props) {
@@ -17,7 +15,6 @@ export default class AllEvent extends Component {
         });
     }
     deleteSpecialist(id) {
-        //console.log("inside deleteHandler")
         axios.delete(`/api/event/delete/${id}`)
             .then(res => {
                 const EventList = this.state.EventList.filter(item => item.id !== id);

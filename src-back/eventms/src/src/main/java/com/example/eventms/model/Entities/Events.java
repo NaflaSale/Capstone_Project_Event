@@ -16,21 +16,23 @@ public class Events {
     private String time;
     private String duration;
     private String src;
-@OneToMany(mappedBy = "events")
-@JsonIgnore
-private List<Admins> items= new ArrayList<>();
 
+@ManyToOne
+ @JoinColumn(name = "admin_id" , referencedColumnName = "adminname")
+ private Admins admins;
 
     public Events() {
     }
-    public Events(int id, String type, String eventName, String location, String time, String duration , String src) {
+
+    public Events(int id, String type, String eventName, String location, String time, String duration, String src, Admins admins) {
         this.id = id;
         this.type = type;
         this.eventName = eventName;
         this.location = location;
         this.time = time;
         this.duration = duration;
-        this.src=src;
+        this.src = src;
+        this.admins = admins;
     }
 
 
@@ -95,26 +97,16 @@ private List<Admins> items= new ArrayList<>();
     //
 
 
-    public List<Admins> getItems() {
-        return items;
+//
+
+
+    public Admins getAdmins() {
+        return admins;
     }
 
-    public void setItems(List<Admins> items) {
-        this.items = items;
+    public void setAdmins(Admins admins) {
+        this.admins = admins;
     }
-
-//    @Override
-//    public String toString() {
-//        return "Events{" +
-//                "id=" + id +
-//                ", type='" + type + '\'' +
-//                ", eventName='" + eventName + '\'' +
-//                ", location='" + location + '\'' +
-//                ", time='" + time + '\'' +
-//                ", duration='" + duration + '\'' +
-//                ", items=" + items +
-//                '}';
-//    }
 
     @Override
     public String toString() {
@@ -126,7 +118,7 @@ private List<Admins> items= new ArrayList<>();
                 ", time='" + time + '\'' +
                 ", duration='" + duration + '\'' +
                 ", src='" + src + '\'' +
-                ", items=" + items +
+                ", admins=" + admins +
                 '}';
     }
 }

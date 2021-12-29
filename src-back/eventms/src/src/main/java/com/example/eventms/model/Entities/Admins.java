@@ -15,15 +15,15 @@ public class Admins {
     private String adminname;
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name = "event_id" , referencedColumnName = "id")
-    private Events events;
+    @OneToMany(mappedBy = "admins")
+    @JsonIgnore
+    private List<Events> items= new ArrayList<>();
 
 
-    public Admins(String adminname, String password, Events events) {
+    public Admins(String adminname, String password, Admins admins) {
         this.adminname = adminname;
         this.password = password;
-        this.events = events;
+       // this.events = events;
     }
 
 
@@ -47,18 +47,17 @@ public class Admins {
     public void setPassword(String password) {
         this.password = password;
     }
- //
 
-    public Events getEvents() {
-        return events;
+
+
+
+    public List<Events> getItems() {
+        return items;
     }
 
-    public void setEvents(Events events) {
-        this.events = events;
+    public void setItems(List<Events> items) {
+        this.items = items;
     }
-
-
-    //
 
 
     @Override
@@ -66,6 +65,7 @@ public class Admins {
         return "Admins{" +
                 "adminname='" + adminname + '\'' +
                 ", password='" + password + '\'' +
+                ", items=" + items +
                 '}';
     }
 }

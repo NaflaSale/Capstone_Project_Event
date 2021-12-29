@@ -1,6 +1,7 @@
 import React,{useState ,useEffect} from "react";
 import axios from "axios";
 import {  Link } from "react-router-dom";
+//
 
 function Login() {
   let [id, setId] = useState("")
@@ -21,6 +22,9 @@ function Login() {
 //add admin
 let [adminname, setAdminname] = useState("")
 let [password, setPassword] = useState("")
+const[data , setData]=useState([{adminname:""}]); //fun Display admin name
+
+
 
 function handleAdmin(event) {setAdminname((adminname= event.target.value)); }
 function handlePassword(event) {setPassword((password= event.target.value));}
@@ -40,6 +44,22 @@ function handlePassword(event) {setPassword((password= event.target.value));}
 
 
  
+// let MyEvent ={
+//   id : id ,
+//   type : type,
+//   eventName : eventName,
+//   location :location,
+//   time:time,
+//   duration :duration,
+//   src:src,
+//   admins:MyAdmin,
+// }
+let MyAdmin ={
+  adminname : adminname ,
+  password : password,
+ //events :MyEvent
+
+}
 let MyEvent ={
   id : id ,
   type : type,
@@ -48,12 +68,7 @@ let MyEvent ={
   time:time,
   duration :duration,
   src:src,
-}
-let MyAdmin ={
-  adminname : adminname ,
-  password : password,
-  events :MyEvent
-
+  admins:MyAdmin
 }
 
 function handleClick2(){
@@ -82,45 +97,29 @@ url:'api/event/add',
   });
   }
   
-
-// function handleClickDel(){
-//   // let MyEvent2 ={
-//   //   id : id}
-//   axios({
-//     method:'delete',
-//     url:"/api/event/delete/3",
-//     //data:MyEvent2 ,
-//   });}
-//delete today
   function handleClickDel2(){
-    // let MyEvent ={
-    //   id : id}
+    
     axios({
       method:'delete',
       url:`/api/event/delete/${del}`,
 
-      //data:MyEvent2 ,
+      
     });}
-
-//to add admin
-
-// function handleClickAdd(){
-//   let MyAdmin ={
-//           adminname : adminname ,
-//           password : password,
-//           id :id, //new add
-     
-//   }
-//   console.log("in fun")
-//   console.log(MyAdmin)
-//   axios({
-//   method:'post',
-//   url:'api/admin/add',
-//     data: MyAdmin,
-  
-//   });
-//   }
-  //to this ..
+    //fun Display admin name
+useEffect(()=>{
+axios.get("/api/admin")
+.then(result=>setData(result.data));
+console.log(data);
+},[]);
+//login code
+// axios({
+//   method: 'get',
+//   url: "/api/admin/login",
+//   responseType: 'stream'
+// })
+//   .then(function(response) {
+//   response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+// });
     return (
    <div>
            
@@ -135,8 +134,8 @@ url:'api/event/add',
             <label>Password : </label>   
             <input type="password" placeholder="Enter Password"  onChange={handlePassword} name="password" required/> 
             <br></br> 
-            <label>id event : </label>   
-            <input type="id" placeholder="Enter id"  onChange={handleId} name="id" required/> 
+            {/* <label>id event : </label>   
+            <input type="id" placeholder="Enter id"  onChange={handleId} name="id" required/>  */}
             <br></br>
             
             <button type="submit" onClick={handleClickAdd}>Registration</button> 
@@ -145,7 +144,16 @@ url:'api/event/add',
 
             <br></br> </form> } 
 
+            <br />
+         <div className="AdminCss">
+               <h2><b><u> ADMIN NAME..</u></b></h2>
+               {data.map(adminname=>{
+                 return <div>
+                   <p>{adminname.adminname}</p>
+                 </div>
+               })}
 
+       </div>
             
             {/* <button type="submit" onClick={handleClickAdd}>Registration</button>  */}
 
@@ -158,49 +166,56 @@ url:'api/event/add',
        
          <label htmlFor="id">ID:</label>
          <br />
-         <input type="text" id="id" name="id" onChange={handleId} />
+         <input type="text" placeholder="ID.." id="id" name="id" onChange={handleId} />
          <br />
          <label htmlFor="name">Event Type: </label>
          <br />
-         <input type="text" id="name" name="name" onChange={handleType} />
+         <input type="text" placeholder="EventType.." id="name" name="name" onChange={handleType} />
          <br />
          <label htmlFor="text">Event Name: </label>
          <br />
-         <input type="text" id="text" name="text" onChange={handleEventName} />
+         <input type="text" placeholder="EventName.." id="text" name="text" onChange={handleEventName} />
          <br />
          <label htmlFor="text">Location: </label>
          <br />
-         <input type="text" id="text" name="text" onChange={handleLocation} />
+         <input type="text" placeholder="Location.." id="text" name="text" onChange={handleLocation} />
          <br />
          <label htmlFor="text">Time: </label>
          <br />
-         <input type="text" id="text" name="text" onChange={handleTime} />
+         <input type="text" placeholder="Time.." id="text" name="text" onChange={handleTime} />
          <br />
          <label htmlFor="text">Duration: </label>
          <br />
-         <input type="text" id="text" name="text" onChange={handleDuration} />
+         <input type="text" placeholder="Duration.." id="text" name="text" onChange={handleDuration} />
          <br />
-         <label>src : </label>  
+         <label>Src : </label>  
          <br></br> 
-         <input type="text" placeholder="src "  onChange={handleSrc} name="id" required/> 
+         <input type="text" placeholder="Src.. "  onChange={handleSrc} name="id" required/> 
          <br></br>
+         <label>AdminName: </label> 
+         <br></br>  
+         <input type="text" placeholder="AdminName.." onChange={handleAdmin} name="username" required/>
+         <br></br> 
          <br />
          <input type="submit" value="Add" onClick={handleClick2}></input>
          <br></br>
+         <br></br>
 
-         <label htmlFor="id">ID:</label>
+         <label htmlFor="id">Delete Admin:</label>
          <br />
-         <input type="text" id="id" name="id" onChange={handleClickDel3} />
+         <input type="text" placeholder="AdminName.." id="id" name="id" onChange={handleClickDel3} />
          <br />
          {/* <input type="submit" value="Delete" onClick={handleClickDel}></input> */}
          <input type="submit" value="Delete" onClick={handleClickDel2}></input>
 
          </form>}
          <br />
+        
+
+
          <br />
          <br />
-         <br />
-         <Link to="/Ticket"><button>Ticket </button></Link> |{" "}
+         {/* <Link to="/Admin"><button>AdminPage </button></Link> |{" "} */}
 
    </div>
      );

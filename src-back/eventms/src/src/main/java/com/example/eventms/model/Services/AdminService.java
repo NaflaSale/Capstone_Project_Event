@@ -36,18 +36,18 @@ public class AdminService {
         adminRepository.deleteById(adminId);
     }
 
-//    public String getCheck(String username ,String password) {
-//        if( adminRepository.existsById(username)  ) {
-//
-//            String Admins = adminRepository.findByUsername(username);
-//            if (Admins.equals(password)) {
-//                return "welcome you Authentication";
-//            } else {
-//                return " sorry not  Authentication";
-//            }
-//        }
-//        return "sorry not  Authentication";
-//    }
+    public String getCheck(String adminname ,String password) {
+        if( adminRepository.existsById(adminname)  ) {
+
+            String Admins = adminRepository.findByUsername(adminname);
+            if (Admins.equals(password)) {
+                return "welcome you Authentication";
+            } else {
+                return " sorry not  Authentication";
+            }
+        }
+        return "sorry not  Authentication";
+    }
 
     }
 

@@ -1,16 +1,3 @@
-// function EventReview() {
-
-
-  
-
-//   return (
-//  <div>
-//      <h1>EventReview</h1>
-//  </div>
-//    );
-//  }
-//  export default  EventReview;
-
 import React from 'react';
 import { useParams } from "react-router-dom";
 import { getInvoice } from "../data";
