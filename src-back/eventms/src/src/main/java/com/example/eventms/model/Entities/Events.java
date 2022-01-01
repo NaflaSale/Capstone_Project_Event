@@ -21,6 +21,12 @@ public class Events {
  @JoinColumn(name = "admin_id" , referencedColumnName = "adminname")
  private Admins admins;
 
+
+//
+    @ManyToMany (mappedBy = "serviceMul")//, cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Users> customerMul = new ArrayList<>();
+//
     public Events() {
     }
 
@@ -106,6 +112,16 @@ public class Events {
 
     public void setAdmins(Admins admins) {
         this.admins = admins;
+    }
+//
+
+
+    public List<Users> getCustomerMul() {
+        return customerMul;
+    }
+
+    public void setCustomerMul(List<Users> customerMul) {
+        this.customerMul = customerMul;
     }
 
     @Override
