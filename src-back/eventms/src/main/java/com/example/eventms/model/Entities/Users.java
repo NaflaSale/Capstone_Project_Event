@@ -20,21 +20,15 @@ public class Users {
     //
     @ManyToMany
     @JoinTable(name = "USER_EVENT",
-            joinColumns = @JoinColumn(name = "customer_id"),
-            inverseJoinColumns = @JoinColumn(name = "services_id"))
-    private List<Events> serviceMul = new ArrayList<>();
-
-    //
-//    public Users(String username, String password) {
-//        this.username = username;
-//        this.password = password;
-//    }
+            joinColumns = @JoinColumn(name = "E_id"),
+            inverseJoinColumns = @JoinColumn(name = "U_id"))
+    private List<Events> withUser = new ArrayList<>();
 
 
-    public Users(String username, String password, List<Events> serviceMul) {
+    public Users(String username, String password, List<Events> withUser) {
         this.username = username;
         this.password = password;
-        this.serviceMul = serviceMul;
+        this.withUser = withUser;
     }
 
     public Users() {
@@ -56,12 +50,12 @@ public class Users {
         this.password = password;
     }
 
-    public List<Events> getServiceMul() {
-        return serviceMul;
+    public List<Events> getWithUser() {
+        return withUser;
     }
 
-    public void setServiceMul(List<Events> serviceMul) {
-        this.serviceMul = serviceMul;
+    public void setWithUser(List<Events> withUser) {
+        this.withUser = withUser;
     }
 
     @Override

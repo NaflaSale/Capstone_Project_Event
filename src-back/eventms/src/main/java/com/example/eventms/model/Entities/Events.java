@@ -23,9 +23,9 @@ public class Events {
 
 
 //
-    @ManyToMany (mappedBy = "serviceMul")//, cascade = CascadeType.ALL)
+    @ManyToMany (mappedBy = "withUser")
     @JsonIgnore
-    private List<Users> customerMul = new ArrayList<>();
+    private List<Users> withUser = new ArrayList<>();
 //
     public Events() {
     }
@@ -115,14 +115,15 @@ public class Events {
     }
 //
 
-
-    public List<Users> getCustomerMul() {
-        return customerMul;
+    public List<Users> getWithUser() {
+        return withUser;
     }
 
-    public void setCustomerMul(List<Users> customerMul) {
-        this.customerMul = customerMul;
+    public void setWithUser(List<Users> withUser) {
+        this.withUser = withUser;
     }
+
+
 
     @Override
     public String toString() {
