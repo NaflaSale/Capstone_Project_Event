@@ -16,21 +16,36 @@ public class Events {
     private String time;
     private String duration;
     private String src;
-
+//with admin
 @ManyToOne
  @JoinColumn(name = "admin_id" , referencedColumnName = "adminname")
  private Admins admins;
 
 
-//
+//with user
     @ManyToMany (mappedBy = "withUser")
     @JsonIgnore
     private List<Users> withUser = new ArrayList<>();
-//
+//with ticket
+  @OneToMany(mappedBy = "events")
+  @JsonIgnore
+  private List<Ticket> items2= new ArrayList<>();
+
     public Events() {
     }
 
-    public Events(int id, String type, String eventName, String location, String time, String duration, String src, Admins admins) {
+//    public Events(int id, String type, String eventName, String location, String time, String duration, String src, Admins admins) {
+//        this.id = id;
+//        this.type = type;
+//        this.eventName = eventName;
+//        this.location = location;
+//        this.time = time;
+//        this.duration = duration;
+//        this.src = src;
+//        this.admins = admins;
+//    }
+
+    public Events(int id, String type, String eventName, String location, String time, String duration, String src, Admins admins, List<Users> withUser, List<Ticket> items2) {
         this.id = id;
         this.type = type;
         this.eventName = eventName;
@@ -39,6 +54,8 @@ public class Events {
         this.duration = duration;
         this.src = src;
         this.admins = admins;
+        this.withUser = withUser;
+        this.items2 = items2;
     }
 
 
@@ -122,8 +139,14 @@ public class Events {
     public void setWithUser(List<Users> withUser) {
         this.withUser = withUser;
     }
+//ticket
+    public List<Ticket> getItems2() {
+        return items2;
+    }
 
-
+    public void setItems2(List<Ticket> items2) {
+        this.items2 = items2;
+    }
 
     @Override
     public String toString() {

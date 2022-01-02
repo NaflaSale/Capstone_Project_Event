@@ -1,6 +1,7 @@
 package com.example.eventms.model.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
@@ -23,6 +24,10 @@ public class Users {
             joinColumns = @JoinColumn(name = "E_id"),
             inverseJoinColumns = @JoinColumn(name = "U_id"))
     private List<Events> withUser = new ArrayList<>();
+//with ticket
+  @OneToMany(mappedBy = "users")
+  @JsonIgnore
+  private List<Ticket> items3= new ArrayList<>();
 
 
     public Users(String username, String password, List<Events> withUser) {
@@ -56,6 +61,14 @@ public class Users {
 
     public void setWithUser(List<Events> withUser) {
         this.withUser = withUser;
+    }
+
+    public List<Ticket> getItems3() {
+        return items3;
+    }
+
+    public void setItems3(List<Ticket> items3) {
+        this.items3 = items3;
     }
 
     @Override
