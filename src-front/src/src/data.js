@@ -7,7 +7,7 @@ let invoices = [
         //location :"Aljouf",
         //time:"12-12-2020",
         details :"2 Days",
-        src:"https://media-exp1.licdn.com/dms/image/C511BAQFDjtrS0u76Tw/company-background_10000/0/1585488022941?e=2159024400&v=beta&t=qaQNzDL0-M6GBBR04mfXA2bB0RMdPuUhDYu2NFVxVNU",
+        src:"https://iqraa.com/Media/Blog_Post_Pictures/c9d2fb90-4c95-426a-bf99-60cff60eb5f8.jpg",
   },
 
   {
@@ -17,7 +17,7 @@ let invoices = [
     // location :"Tabuk",
     // time:"30-12-2021",
      details :"2:30 H",
-    src:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU0myaFW7s5cFinE61ie12drQOLOk8-XVWCJeckwxUu750eKP0gh_dk7u4CjGZkJ09gRo&usqp=CAU",
+    src:"https://cdn1-m.alittihad.ae/store/archive/image/2021/10/27/ece86eb3-49fa-4234-a067-cb29a8a20bd4.jpeg?width=1300",
 },
 
 

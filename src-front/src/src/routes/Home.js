@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios, { Axios } from "axios"
+import {  Link } from "react-router-dom";
 
 export default class AllEvent extends Component {
     constructor(props) {
@@ -47,9 +48,8 @@ export default class AllEvent extends Component {
                                 <td>{item.time}</td>
                                 <td>{item.duration}</td>
                                 <td><img height="100" width="100" src={item.src} /></td>
-
-                                <td><button >add..</button></td>
-                                <td><button onClick={(e) => this.deleteSpecialist(item.id, e)}>delete..</button></td>
+                                <Link to="/Ticket"><td><button >add..</button></td></Link>
+                              <td><button onClick={(e) => this.deleteSpecialist(item.id, e)}>delete..</button></td>
                             </tr>
                         )))
                         }

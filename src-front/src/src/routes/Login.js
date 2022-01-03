@@ -44,16 +44,7 @@ function handlePassword(event) {setPassword((password= event.target.value));}
 
 
  
-// let MyEvent ={
-//   id : id ,
-//   type : type,
-//   eventName : eventName,
-//   location :location,
-//   time:time,
-//   duration :duration,
-//   src:src,
-//   admins:MyAdmin,
-// }
+
 let MyAdmin ={
   adminname : adminname ,
   password : password,
@@ -111,15 +102,9 @@ axios.get("/api/admin")
 .then(result=>setData(result.data));
 console.log(data);
 },[]);
-//login code
-// axios({
-//   method: 'get',
-//   url: "/api/admin/login",
-//   responseType: 'stream'
-// })
-//   .then(function(response) {
-//   response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
-// });
+
+
+
     return (
    <div>
            
