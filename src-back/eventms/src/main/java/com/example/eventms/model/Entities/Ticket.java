@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Table
 public class Ticket {
      @Id
-    private int TicketId;
-    private String Name;
+    private int ticketId;
+    private String name;
     private String price;
 
 
@@ -15,7 +15,7 @@ public class Ticket {
     @ManyToOne
     @JoinColumn(name = "E_id" , referencedColumnName = "id")
     private Events events;
-//with user
+////with user
   @ManyToOne
   @JoinColumn(name = "U_id" , referencedColumnName = "username")
   private Users users;
@@ -24,36 +24,28 @@ public class Ticket {
     public Ticket() {
     }
 
-//    public Ticket(int ticketId, String name, String price, Events events) {
-//        TicketId = ticketId;
-//        Name = name;
-//        this.price = price;
-//        this.events = events;
-//    }
-
-
     public Ticket(int ticketId, String name, String price, Events events, Users users) {
-        TicketId = ticketId;
-        Name = name;
+        this.ticketId = ticketId;
+        this.name = name;
         this.price = price;
         this.events = events;
         this.users = users;
     }
 
     public int getTicketId() {
-        return TicketId;
+        return ticketId;
     }
 
     public void setTicketId(int ticketId) {
-        TicketId = ticketId;
+        this.ticketId = ticketId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getPrice() {
@@ -64,14 +56,6 @@ public class Ticket {
         this.price = price;
     }
 
-    public Events getEvents() {
-        return events;
-    }
-
-    public void setEvents(Events events) {
-        this.events = events;
-    }
-
     public Users getUsers() {
         return users;
     }
@@ -80,13 +64,22 @@ public class Ticket {
         this.users = users;
     }
 
+    public Events getEvents() {
+        return events;
+    }
+
+    public void setEvents(Events events) {
+        this.events = events;
+    }
+
     @Override
     public String toString() {
         return "Ticket{" +
-                "TicketId=" + TicketId +
-                ", Name='" + Name + '\'' +
+                "ticketId=" + ticketId +
+                ", name='" + name + '\'' +
                 ", price='" + price + '\'' +
                 ", events=" + events +
+                ", users=" + users +
                 '}';
     }
 }

@@ -84,6 +84,7 @@ let MyAdmin ={
         {/* <Link to="/EventReview"><button>EventReview </button> </Link>{" "} */}
         <Link to="/Home"><button>HomePage</button></Link>|{" "}
         <Link to="/Login"><button>Login</button></Link>|{" "}
+        <Link to="/EnterTicket"><button>EnterTicket </button></Link> |{" "}
 
         <Link to="/Ticket"><button>Ticket </button></Link> |{" "}
 

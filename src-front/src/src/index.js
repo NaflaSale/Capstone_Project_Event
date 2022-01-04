@@ -54,7 +54,7 @@ import EventReview from "./routes/EventReview";
 import EventReviews from './routes/EventReviews';
 import Ticket from "./routes/Ticket";
 import Event from './routes/Event';
-import Admin from './routes/Admin';
+import EnterTicket from './routes/EnterTicket';
 import {
   BrowserRouter,
   Routes,
@@ -88,7 +88,7 @@ ReactDOM.render(
 
         
        <Route path="Home" element={<Home />} /> 
-       <Route path="Admin" element={<Admin />} /> 
+       <Route path="EnterTicket" element={<EnterTicket />} /> 
         {/* </Route> */}
         <Route path="Login" element={<Login />} />
         {/* <Route path="Events" element={<Events />} />// ADD/ */}

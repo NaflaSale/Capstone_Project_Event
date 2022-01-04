@@ -10,9 +10,7 @@ import java.util.List;
 
 @Entity
 @Table
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
+
 public class Users {
 
     @Id
@@ -21,19 +19,27 @@ public class Users {
     //
     @ManyToMany
     @JoinTable(name = "USER_EVENT",
-            joinColumns = @JoinColumn(name = "E_id"),
-            inverseJoinColumns = @JoinColumn(name = "U_id"))
-    private List<Events> withUser = new ArrayList<>();
-//with ticket
+            joinColumns = @JoinColumn(name = "user_name"),
+            inverseJoinColumns = @JoinColumn(name = "Event_id"))
+    private List<Events> events = new ArrayList<>();
+
+////with ticket
   @OneToMany(mappedBy = "users")
   @JsonIgnore
   private List<Ticket> items3= new ArrayList<>();
 
-
-    public Users(String username, String password, List<Events> withUser) {
+    public Users(String username, String password, List<Events> events) {
         this.username = username;
         this.password = password;
-        this.withUser = withUser;
+        this.events = events;
+    }
+
+    public List<Events> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Events> events) {
+        this.events = events;
     }
 
     public Users() {
@@ -55,13 +61,6 @@ public class Users {
         this.password = password;
     }
 
-    public List<Events> getWithUser() {
-        return withUser;
-    }
-
-    public void setWithUser(List<Events> withUser) {
-        this.withUser = withUser;
-    }
 
     public List<Ticket> getItems3() {
         return items3;

@@ -1,86 +1,92 @@
-
-    
-
 import React, { Component } from "react";
-import axios, { Axios } from "axios"
+import axios from "axios"
 
-export default class AllTicket extends Component {
+
+
+
+export default class MyTicket extends Component {
+
+
     constructor(props) {
         super(props);
+
         this.state = {
+
             TicketList: [],
+
         };
     }
+
+
+
+
+
+
     componentDidMount() {
         axios.get("api/ticket").then(response => {
             const TicketList = response.data
             this.setState({ TicketList });
         });
     }
-    deleteSpecialist(ticketId) {
-        axios.delete(`/api/ticket/delete/${ticketId}`)
+
+    deleteUseGarden(ticketId) {
+        console.log("Delete after Entering")
+        axios.delete(`api/ticket/delete/${ticketId}`)
             .then(res => {
                 const TicketList = this.state.TicketList.filter(item => item.ticketId !== ticketId);
                 this.setState({ TicketList });
-           })
+            })
     }
-    render() {
-        return (
-            <div>
-                <table >
-                    <thead>
-                        <tr>
-                            <th >Ticket:</th>
-                            <th >Name</th>
-                            <th >price</th>
-                            <th >event</th>
-                         </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.TicketList.map((item => (
-                            <tr key={item.ticketId}>
-                                <td>{item.ticketId}</td>
-                                <td>{item.name}</td>
-                                <td>{item.price}</td>
-                                <td>{item.events.eventName}</td>
-                                 <td><button >add..</button></td>
-                                <td><button onClick={(e) => this.deleteSpecialist(item.ticketId, e)}>delete..</button></td>
-                            </tr>
-                        )))
-                        }
-                    </tbody>
-                </table>
-                
-            </div>
-        )}}
-                      
+
+
+
+    
 
 
 
 
 
-{/* 
+render() {
+    return (
 
-// function Ticket() {
+
+        <div >
+            <div >
+               <p></p>
+                    {this.state.TicketList.map((item => (
+                        <tr key={item.ticketId}>
 
 
-  
+                       <div >
+                        <div ></div>
+                         <div >
+                           <div >
+                      {/* <img height="200" width="200" src={item.treetype.image} /> */}
+                         </div>
+                        </div>
+                      <div >
+                      </div>
+                        <div>
+                        <p>Name :{item.name} </p>
+                        <p> Price : {item.price}</p>
+                        <p>Event Name :{item.events.eventName} </p>
+                        <p>User Name :{item.users.username} </p>
+                        {/* <p>{item.treetype.type}</p> */}
+                        </div>
+                       <div >
 
-//     return (
-   
-//       <div>
-//         <h1>Ticket</h1>
-//        <div class="tixContainer">
+</div>
+</div>
 
-// <a class="tix" href="#">
-//   <div class="tixInner">
-//     <span><strong>BUY</strong> Ticket</span>
-//   </div>
-// </a>
-  
-// </div>
+                 <td><button button class="bubbly" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button></td>
 
-//       </div>
-//      );
-//    }
-//    export default  Ticket; */}
+                        </tr>
+                    )))
+                    }
+        
+        </div>
+        </div>
+       
+  )
+}
+}

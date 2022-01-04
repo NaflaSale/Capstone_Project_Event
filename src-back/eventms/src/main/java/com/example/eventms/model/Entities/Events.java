@@ -23,9 +23,10 @@ public class Events {
 
 
 //with user
-    @ManyToMany (mappedBy = "withUser")
+    @ManyToMany (mappedBy = "events")
     @JsonIgnore
-    private List<Users> withUser = new ArrayList<>();
+    private List<Users> users = new ArrayList<>();
+
 //with ticket
   @OneToMany(mappedBy = "events")
   @JsonIgnore
@@ -34,18 +35,7 @@ public class Events {
     public Events() {
     }
 
-//    public Events(int id, String type, String eventName, String location, String time, String duration, String src, Admins admins) {
-//        this.id = id;
-//        this.type = type;
-//        this.eventName = eventName;
-//        this.location = location;
-//        this.time = time;
-//        this.duration = duration;
-//        this.src = src;
-//        this.admins = admins;
-//    }
-
-    public Events(int id, String type, String eventName, String location, String time, String duration, String src, Admins admins, List<Users> withUser, List<Ticket> items2) {
+    public Events(int id, String type, String eventName, String location, String time, String duration, String src, Admins admins, List<Ticket> items2) {
         this.id = id;
         this.type = type;
         this.eventName = eventName;
@@ -54,12 +44,11 @@ public class Events {
         this.duration = duration;
         this.src = src;
         this.admins = admins;
-        this.withUser = withUser;
         this.items2 = items2;
     }
 
 
-    //
+//
 
 
     public int getId() {
@@ -119,27 +108,6 @@ public class Events {
     }
     //
 
-
-//
-
-
-    public Admins getAdmins() {
-        return admins;
-    }
-
-    public void setAdmins(Admins admins) {
-        this.admins = admins;
-    }
-//
-
-    public List<Users> getWithUser() {
-        return withUser;
-    }
-
-    public void setWithUser(List<Users> withUser) {
-        this.withUser = withUser;
-    }
-//ticket
     public List<Ticket> getItems2() {
         return items2;
     }
@@ -148,6 +116,15 @@ public class Events {
         this.items2 = items2;
     }
 
+    public Admins getAdmins() {
+        return admins;
+    }
+
+    public void setAdmins(Admins admins) {
+        this.admins = admins;
+    }
+
+    //
     @Override
     public String toString() {
         return "Events{" +
@@ -158,7 +135,7 @@ public class Events {
                 ", time='" + time + '\'' +
                 ", duration='" + duration + '\'' +
                 ", src='" + src + '\'' +
-                ", admins=" + admins +
+//                ", admins=" + admins +
                 '}';
     }
 }

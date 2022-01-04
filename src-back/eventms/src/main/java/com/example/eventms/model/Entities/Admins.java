@@ -20,11 +20,13 @@ public class Admins {
     private List<Events> items= new ArrayList<>();
 
 
-    public Admins(String adminname, String password, Admins admins) {
+    public Admins(String adminname, String password, List<Events> items) {
         this.adminname = adminname;
         this.password = password;
-       // this.events = events;
+        this.items = items;
     }
+
+
 
 
     //
@@ -48,9 +50,6 @@ public class Admins {
         this.password = password;
     }
 
-
-
-
     public List<Events> getItems() {
         return items;
     }
@@ -60,12 +59,13 @@ public class Admins {
     }
 
 
+
     @Override
     public String toString() {
         return "Admins{" +
                 "adminname='" + adminname + '\'' +
                 ", password='" + password + '\'' +
-                ", items=" + items +
+//                ", items=" + items +
                 '}';
     }
 }
