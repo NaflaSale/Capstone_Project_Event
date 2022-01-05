@@ -17,7 +17,7 @@ let invoices = [
     // location :"Tabuk",
     // time:"30-12-2021",
      details :"2:30 H",
-    src:"https://cdn1-m.alittihad.ae/store/archive/image/2021/10/27/ece86eb3-49fa-4234-a067-cb29a8a20bd4.jpeg?width=1300",
+    src:"https://www.sayidaty.net/sites/default/files/styles/1375_scale/public/2021-10/14843.jpeg?itok=ZY4zyuOe",
 },
 
 
@@ -44,35 +44,3 @@ export function getInvoice(id) {
   );
 } 
 
-
-
-// let invoices = [
-//     {
-//         id : 12 ,
-//         type : "Arts",
-//         eventName : "eventName",
-//         location :"location",
-//         time:"time",
-//         duration :"duration",
-//     },
-//     {
-//         id : 11 ,
-//         type : "Arts",
-//         eventName : "eventName",
-//         location :"location",
-//         time:"time",
-//         duration :"duration",
-//     },
-    
- 
-//   ];
-  
-//   export function getInvoices() { 
-//     return invoices;
-//   }
-
-//   export function getInvoice(id) {
-//     return invoices.find(
-//       invoice => invoice.id === id
-//     );
-//   }

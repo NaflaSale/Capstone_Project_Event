@@ -1,5 +1,6 @@
 import React,{useState } from "react";
 import axios from "axios";
+import {  Link } from "react-router-dom";
 
 function EnterTicket() {
 
@@ -112,7 +113,12 @@ return (
        <input type="text" placeholder="Duration.." id="text" name="text" onChange={handleDuration} />
        <br /> */}
        
-       <input type="submit" value="Add"  ></input>
+       <input type="submit" value="Add"  ></input> 
+       <Link to="/Ticket"><td><button >Ticket..</button></td></Link>
+
+
+       
+
        <br></br>
        <br></br>
 
@@ -124,3 +130,8 @@ return (
  );
 }
 export default  EnterTicket;
+
+
+
+
+

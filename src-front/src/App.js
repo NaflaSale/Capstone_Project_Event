@@ -1,10 +1,10 @@
 import React,{useState ,useEffect} from "react";
 import { Outlet, Link } from "react-router-dom";
 import axios from "axios";
+import Login from "./routes/Login";
 
 
-
- export default function App() {
+ export default function App(props) {
         let [Confirm, setConfirm] = useState(false)
         let [Confirm2, setConfirm2] = useState(false)
         // let [id, setId] = useState("")
@@ -27,9 +27,15 @@ import axios from "axios";
 
   function handleUser(event) {setUsername((username= event.target.value)); }
   function handlePassword2(event) {setPassword2((password2= event.target.value));}
-
-
-
+///
+  let [Authentication,setAuthentication]= useState(false);
+  function handleLogin(){
+      setAuthentication(true);
+  }
+  if(!Authentication){
+      return<Login handleLogin = {handleLogin} />
+  }
+///
 let MyAdmin ={
         adminname : adminname ,
         password : password,
@@ -75,6 +81,25 @@ let MyAdmin ={
                 }
 
 
+                
+function handleSubmit(event) {
+  event.preventDefault();
+  axios({
+      method: "get",
+      url: "api/users/login",
+      params: { username: username, password: password }
+  })
+      .then((res => {
+          console.log(res.data)
+          if (res.data == "welcome you Authentication") {
+              props.handleLogin();
+          }
+          else {
+              alert(res.data)
+          }
+      }))
+}
+
 
         return(<div className="home">
         
@@ -83,10 +108,12 @@ let MyAdmin ={
         <Link to="/Events"><button>Events</button></Link>|{" "}
         {/* <Link to="/EventReview"><button>EventReview </button> </Link>{" "} */}
         <Link to="/Home"><button>HomePage</button></Link>|{" "}
-        <Link to="/Login"><button>Login</button></Link>|{" "}
-        <Link to="/EnterTicket"><button>EnterTicket </button></Link> |{" "}
+        {/* <Link to="/Login"><button>Login</button></Link>|{" "} */}
+        {/* <Link to="/EnterTicket"><button>EnterTicket </button></Link> |{" "}
 
-        <Link to="/Ticket"><button>Ticket </button></Link> |{" "}
+        <Link to="/Ticket"><button>Ticket </button></Link> |{" "} */}
+        {/* <Link to="/LoginUser"><button>LoginUser </button></Link> |{" "} */}
+
 
        </nav><Outlet />
 
@@ -108,8 +135,9 @@ let MyAdmin ={
             <br></br>  
             <label>Password : </label>   
             <input type="password" placeholder="Enter Password"  onChange={handlePassword} name="password" required/> 
-            <br></br> 
-            <button type="submit" >Sign in</button>  
+            <br></br>
+            <Link to="/Login"><button>Login</button></Link>|{" "} 
+            {/* <button type="submit" >Sign in</button>   */}
             <button type="submit" onClick={handleClickAdd}>Registration</button> 
             <br></br> </form> } 
             
@@ -123,7 +151,8 @@ let MyAdmin ={
            <input type="password" placeholder="Enter Password" onChange={handlePassword2} name="password" required/> 
            <br></br> 
            <button type="submit" onClick={handleClickAdd2}>Registration</button> 
-           <button type="submit">Sign in</button>  
+           
+           <button type="submit" onClick={handleSubmit}>Sign in</button>  
            <br></br> </form> } 
            </div>
       

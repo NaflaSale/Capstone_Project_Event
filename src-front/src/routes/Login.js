@@ -3,7 +3,8 @@ import axios from "axios";
 import {  Link } from "react-router-dom";
 //
 
-function Login() {
+function Login(props)// maha pro
+{
   let [id, setId] = useState("")
   let [type, setType] = useState("")
   let [eventName, setEventName] = useState("")
@@ -103,7 +104,27 @@ axios.get("/api/admin")
 console.log(data);
 },[]);
 
+///
 
+
+function handleSubmit(event) {
+  event.preventDefault();
+  axios({
+      method: "get",
+      url: "api/admin/login",
+      params: { adminname: adminname, password: password }
+  })
+      .then((res => {
+          console.log(res.data)
+          if (res.data == "welcome you Authentication") {
+              props.handleLogin();
+          }
+          else {
+              alert(res.data)
+          }
+      }))
+}
+///
 
     return (
    <div>
@@ -125,7 +146,7 @@ console.log(data);
             
             <button type="submit" onClick={handleClickAdd}>Registration</button> 
 
-            <button type="submit" >Sign in</button>  
+            <button type="submit" onClick={handleSubmit}>Sign in</button>  
 
             <br></br> </form> } 
 
