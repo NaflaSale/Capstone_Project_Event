@@ -23,8 +23,9 @@ import {
 ReactDOM.render(
   <BrowserRouter>
   <Routes>
-    
-        <Route path="/" element={<App />}>
+  <Route path="/" element={<App />}>
+
+        {/* <Route path="/" element={<App />}> */}
         {/* <Route path="Home" element={<Home />} >
         <Route path="l_id" element={<Home />} /> */}
          <Route path="EventReview" element={<EventReview />} >

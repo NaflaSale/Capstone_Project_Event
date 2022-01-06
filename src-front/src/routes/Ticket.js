@@ -73,7 +73,7 @@ render() {
                         <p> Price : {item.price}</p>
                         <p>Event Name :{item.events.eventName} </p>
                         <p>User Name :{item.users.username} </p>
-                        {/* <p>{item.treetype.type}</p> */}
+                        
                         </div>
                        <div >
 

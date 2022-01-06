@@ -1,9 +1,11 @@
 import React,{useState } from "react";
 import axios from "axios";
 import {  Link } from "react-router-dom";
+//import Login from "./routes/Login";
+
 
 function EnterTicket() {
-
+  
     let [username, setUsername] = useState("") //USER
 
     let [ticketId, setTicketId] = useState("")
@@ -30,7 +32,10 @@ function EnterTicket() {
 //   function handleLocation(event) {setLocation((location= event.target.value));}
 //   function handleTime(event) { setTime((time= event.target.value));}
 //   function handleDuration(event) {setDuration((duration= event.target.value))}
-  
+
+
+
+
   let MyEvent ={
     id : Number(id) ,
     
@@ -69,6 +74,8 @@ function EnterTicket() {
         
         });
         }
+
+       
 
 return (
     <div>

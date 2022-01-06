@@ -1,9 +1,9 @@
 import React,{useState ,useEffect} from "react";
 import axios from "axios";
-import {  Link } from "react-router-dom";
+//import {  Link } from "react-router-dom";
 //
 
-function Login(props)// maha pro
+function Login(props)//  pro
 {
   let [id, setId] = useState("")
   let [type, setType] = useState("")
@@ -24,9 +24,14 @@ function Login(props)// maha pro
 let [adminname, setAdminname] = useState("")
 let [password, setPassword] = useState("")
 const[data , setData]=useState([{adminname:""}]); //fun Display admin name
+//new
+let [username, setUsername] = useState("")
+let [password2, setPassword2] = useState("")
 
 
-
+function handleUser(event) {setUsername((username= event.target.value)); }
+function handlePassword2(event) {setPassword2((password2= event.target.value));}
+//
 function handleAdmin(event) {setAdminname((adminname= event.target.value)); }
 function handlePassword(event) {setPassword((password= event.target.value));}
 ///to this
@@ -104,7 +109,7 @@ axios.get("/api/admin")
 console.log(data);
 },[]);
 
-///
+///اساس
 
 
 function handleSubmit(event) {
@@ -125,6 +130,23 @@ function handleSubmit(event) {
       }))
 }
 ///
+// function handleSubmit1(event) {
+//   event.preventDefault();
+//   axios({
+//       method: "get",
+//       url: "api/users/login",
+//       params: { username: username, password: password2 }
+//   })
+//       .then((res => {
+//           console.log(res.data)
+//           if (res.data == "welcome you Authentication") {
+//               props.handleLogin1();
+//           }
+//           else {
+//               alert(res.data)
+//           }
+//       }))
+// }
 
     return (
    <div>
@@ -144,12 +166,21 @@ function handleSubmit(event) {
             <input type="id" placeholder="Enter id"  onChange={handleId} name="id" required/>  */}
             <br></br>
             
+            
             <button type="submit" onClick={handleClickAdd}>Registration</button> 
 
-            <button type="submit" onClick={handleSubmit}>Sign in</button>  
+            <button type="submit"  onClick={handleSubmit}>Sign in</button>  
 
             <br></br> </form> } 
-
+            {/* <label>UserName : </label>   
+           <input type="text" placeholder="Enter Username" onChange={handleUser} name="username" required/>
+           <br></br>  
+           <label>Password : </label>   
+           <input type="password" placeholder="Enter Password" onChange={handlePassword2} name="password" required/> 
+           <br></br> 
+           <button type="submit" >Registration</button> 
+           
+           <button type="submit">Sign in</button>  */}
             <br />
          <div className="AdminCss">
                <h2><b><u> ADMIN NAME..</u></b></h2>
@@ -217,8 +248,7 @@ function handleSubmit(event) {
          </form>}
          <br />
         
-
-
+        
          <br />
          <br />
          {/* <Link to="/Admin"><button>AdminPage </button></Link> |{" "} */}
