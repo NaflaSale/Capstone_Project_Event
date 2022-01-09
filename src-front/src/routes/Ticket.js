@@ -52,7 +52,7 @@ render() {
     return (
 
 
-        <div >
+        <div className="ticket" >
             <div >
                <p></p>
                     {this.state.TicketList.map((item => (
@@ -60,27 +60,28 @@ render() {
 
 
                        <div >
-                        <div ></div>
+                        
                          <div >
                            <div >
-                      {/* <img height="200" width="200" src={item.treetype.image} /> */}
                          </div>
                         </div>
                       <div >
                       </div>
-                        <div>
+                        <div className="event">
+                        <img height="200" width="200" src={item.events.src} />
                         <p>Name :{item.name} </p>
                         <p> Price : {item.price}</p>
                         <p>Event Name :{item.events.eventName} </p>
                         <p>User Name :{item.users.username} </p>
-                        
+                        <td><button button class="nnn" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button></td>
+
                         </div>
                        <div >
 
 </div>
 </div>
 
-                 <td><button button class="bubbly" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button></td>
+                 {/* <td><button button class="bubbly" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button></td> */}
 
                         </tr>
                     )))

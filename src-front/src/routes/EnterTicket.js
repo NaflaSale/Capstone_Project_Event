@@ -139,6 +139,3 @@ return (
 export default  EnterTicket;
 
 
-
-
-

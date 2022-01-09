@@ -47,8 +47,8 @@ export default class AllEvent extends Component {
                                 <td>{item.location}</td>
                                 <td>{item.time}</td>
                                 <td>{item.duration}</td>
-                                <td><img height="100" width="100" src={item.src} /></td>
-                                <Link to="/LoginUser"><td><button >add..</button></td></Link>
+                                <td><img className="imgevent" height="100" width="100" src={item.src} /></td>
+                                <Link to="/EnterTicket"><td><button >add..</button></td></Link>
                               {/* <td><button onClick={(e) => this.deleteSpecialist(item.id, e)}>delete..</button></td> */}
                             </tr>
                         )))

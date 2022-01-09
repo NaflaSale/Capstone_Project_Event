@@ -7,11 +7,11 @@ import Home from "./routes/Home";
 import Login from "./routes/Login";
 import Events from "./routes/Events";
 import EventReview from "./routes/EventReview";
-import EventReviews from './routes/EventReviews';
 import Ticket from "./routes/Ticket";
 import Event from './routes/Event';
 import EnterTicket from './routes/EnterTicket';
-import LoginUser from "./routes/LoginUser";
+import Admin from "./routes/Admin";
+
 
 import {
   BrowserRouter,
@@ -25,6 +25,7 @@ ReactDOM.render(
   <Routes>
   <Route path="/" element={<App />}>
 
+   
         {/* <Route path="/" element={<App />}> */}
         {/* <Route path="Home" element={<Home />} >
         <Route path="l_id" element={<Home />} /> */}
@@ -52,7 +53,7 @@ ReactDOM.render(
 
         {/* <Route path="Login" element={<Login />} /> */}
 
-        
+        <Route path="Admin" element={<Admin />} />
         {/* <Route path="Events" element={<Events />} />// ADD/ */}
         {/* <Route path="l_id" element={<Events />} />
         </Route> */}
@@ -60,7 +61,6 @@ ReactDOM.render(
         <Route path="l_id" element={<EventReview />} />
         </Route> */}
         <Route path="Ticket" element={<Ticket />} />
-        <Route path="LoginUser" element={<LoginUser />} />
         <Route
         index 
         element={
