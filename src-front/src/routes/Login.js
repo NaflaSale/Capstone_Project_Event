@@ -1,10 +1,9 @@
 import React,{useState ,useEffect} from "react";
 import axios from "axios";
-
-
+import { Link, useNavigate } from "react-router-dom"; //mm
 function Login(props)//  pro
 {
-  
+  const navigate =useNavigate(); //mm
   let [ConfirmA, setConfirmA] = useState(false)
   let [Confirm2, setConfirm2] = useState(false)
 //add admin
@@ -61,7 +60,9 @@ function handleSubmit(event) {
           console.log(res.data)
           if (res.data == "welcome you Authentication Admin") {
               props.handleLogin(res.data );
+              navigate('/Events')//mm
           }
+
           else {
               alert(res.data)
           }
@@ -88,7 +89,7 @@ function handleSubmitUser(event) {
 
     return (
    <div>
-     <h1><u><i>event management system</i></u></h1>
+     <button fontFamily="Times New Roman" ><u><i>event management system</i></u></button>
      
      <br></br>
            <div class="greenButton">
@@ -137,6 +138,7 @@ function handleSubmitUser(event) {
             </div>
             
         </main>}
+        {/* <Link to="/Events"><button>Events</button></Link>|{" "} */}
 
    </div>
      );

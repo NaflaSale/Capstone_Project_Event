@@ -1,7 +1,6 @@
 import React from 'react';
 import { Outlet,NavLink,useSearchParams } from "react-router-dom";
 import { getInvoices } from "../data";
-
  function Invoices() {
     let invoices = getInvoices();
     let [searchParams, setSearchParams] = useSearchParams();
