@@ -327,3 +327,12 @@ button{
     text-align: center;
 }
   
+.event2{
+  
+  font-family:'Times New Roman', Times, serif;
+   display: block;
+  background: #f1eeee36;
+  width: 500px;
+  border: 2px solid #13010167;
+ 
+}

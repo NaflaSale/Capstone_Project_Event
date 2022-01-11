@@ -7,14 +7,14 @@ function EventReview() {
   let invoice = getInvoice(Number(params.invoiceId));
 
    return (
-     <main style={{ padding: "1rem 0" }}>
-          <h2> ID:  {params.invoiceId}</h2>
+     <main className='show' style={{ padding: "1rem 0" }}>
+          {/* <h2> ID:  {params.invoiceId}</h2> */}
           <img className="imgg" src={invoice.src} width="700" height="300"/>
-          <p>Type: {invoice.type}</p>
-          <p> Name: {invoice.eventName}</p>
-          <p>Location: {invoice.location}</p>
-          <p>Time:  {invoice.time} </p>
-          <p>Duration:  {invoice.duration} </p>
+          <p> {invoice.src1}</p>
+          <p> {invoice.src2}</p>
+          <p> {invoice.src3}</p>
+          <p>{invoice.src4} </p>
+          {/* <p> {invoice.duration} </p> */}
           <Link to="/Home"><button>Home </button></Link> |{" "}
 
      </main>
