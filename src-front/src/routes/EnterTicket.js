@@ -61,11 +61,13 @@ function EnterTicket() {
   }
 
  function handleClickMyTicket(e){
-    
+  let x=localStorage.getItem("LogIn");
+  
+  
         e.preventDefault();
        console.log("in fun")
        console.log(MyTicket)
-
+       if(x=="welcome you Authentication User"){
         axios({
         method:'post',
         //url:'api/ticket/add',
@@ -73,7 +75,7 @@ function EnterTicket() {
           data: MyTicket,
         
         });
-        }
+        }}
 
        
 
@@ -120,7 +122,7 @@ return (
        <input type="text" placeholder="Duration.." id="text" name="text" onChange={handleDuration} />
        <br /> */}
        
-       <input type="submit" value="Add"  ></input> 
+       <button type="submit" value="Add"  >Add</button> 
        <Link to="/Ticket"><td><button >Ticket..</button></td></Link>
 
 

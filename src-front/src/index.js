@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-//import reportWebVitals from './reportWebVitals';
 import Home from "./routes/Home";
 import Login from "./routes/Login";
 import Events from "./routes/Events";
@@ -24,7 +23,7 @@ ReactDOM.render(
   <BrowserRouter>
   <Routes>
   <Route path="/" element={<App />}>
-
+  <Route path="Login" element={<Login />} />
    
         {/* <Route path="/" element={<App />}> */}
         {/* <Route path="Home" element={<Home />} >
@@ -52,7 +51,7 @@ ReactDOM.render(
        <Route path="EnterTicket" element={<EnterTicket />} /> 
         {/* </Route> */}
 
-        {/* <Route path="Login" element={<Login />} /> */}
+        
 
         <Route path="Admin" element={<Admin />} />
         {/* <Route path="Events" element={<Events />} />// ADD/ */}

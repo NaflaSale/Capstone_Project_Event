@@ -25,11 +25,14 @@ export default class MyTicket extends Component {
 
 
     componentDidMount() {
+        let x=localStorage.getItem("LogIn");
+        if(x=="welcome you Authentication User"){
+
         axios.get("api/ticket").then(response => {
             const TicketList = response.data
             this.setState({ TicketList });
         });
-    }
+    }}
 
     deleteUseGarden(ticketId) {
         console.log("Delete after Entering")

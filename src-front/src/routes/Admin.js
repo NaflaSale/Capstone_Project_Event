@@ -74,46 +74,56 @@ let MyEvent ={
   admins:MyAdmin
 }
 
-function handleClick2(){
-
+function handleClick2(){ //malak
+let x=localStorage.getItem("LogIn");
 console.log("in fun")
 console.log(MyEvent)
+if(x=="welcome you Authentication Admin"){
+
+
 axios({
 method:'post',
 url:'api/event/add',
   data: MyEvent,
 
 });
-}
+}}
 
 
 
   function handleClickAdd(){
-
-  console.log("in fun")
-  console.log(MyAdmin)
+    let x=localStorage.getItem("LogIn");
+    console.log("in fun")
+    console.log(MyEvent)
+    if(x=="welcome you Authentication Admin"){
+  
   axios({
   method:'post',
   url:'api/admin/add',
     data: MyAdmin,
   
   });
-  }
+  }}
   
   function handleClickDel2(){
-    
+    let x=localStorage.getItem("LogIn");
+    if(x=="welcome you Authentication Admin"){
+
     axios({
       method:'delete',
       url:`/api/event/delete/${del}`,
 
       
-    });}
+    });}}
     //fun Display admin name
 useEffect(()=>{
+  let x=localStorage.getItem("LogIn");
+    if(x=="welcome you Authentication Admin"){
+
 axios.get("/api/admin")
 .then(result=>setData(result.data));
 console.log(data);
-},[]);
+}},[]);
 
 
 

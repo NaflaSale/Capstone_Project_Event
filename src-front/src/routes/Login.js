@@ -1,9 +1,9 @@
 import React,{useState ,useEffect} from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom"; //mm
-function Login(props)//  pro
+//import { Link, useNavigate } from "react-router-dom"; //nav
+function Login()//  pro
 {
-  const navigate =useNavigate(); //mm
+//const navigate =useNavigate(); //nav
   let [ConfirmA, setConfirmA] = useState(false)
   let [Confirm2, setConfirm2] = useState(false)
 //add admin
@@ -59,8 +59,9 @@ function handleSubmit(event) {
       .then((res => {
           console.log(res.data)
           if (res.data == "welcome you Authentication Admin") {
-              props.handleLogin(res.data );
-              navigate('/Events')//mm
+             // props.handleLogin(res.data );
+             localStorage.setItem("LogIn","welcome you Authentication Admin") //malak
+
           }
 
           else {
@@ -79,7 +80,8 @@ function handleSubmitUser(event) {
       .then((res => {
           console.log(res.data)
           if (res.data == "welcome you Authentication User") {
-              props.handleLogin(res.data);
+             // props.handleLogin(res.data);
+             localStorage.setItem("LogIn", "welcome you Authentication User") //malak
           }
           else {
               alert(res.data)
@@ -89,7 +91,7 @@ function handleSubmitUser(event) {
 
     return (
    <div>
-     <button fontFamily="Times New Roman" ><u><i>event management system</i></u></button>
+     {/* <button fontFamily="Times New Roman" ><u><i>event management system</i></u></button> */}
      
      <br></br>
            <div class="greenButton">
