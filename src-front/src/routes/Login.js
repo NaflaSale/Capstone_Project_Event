@@ -60,7 +60,7 @@ function handleSubmit(event) {
           console.log(res.data)
           if (res.data == "welcome you Authentication Admin") {
              // props.handleLogin(res.data );
-             localStorage.setItem("LogIn","welcome you Authentication Admin") //malak
+             localStorage.setItem("LogIn","welcome you Authentication Admin") 
 
           }
 
@@ -81,7 +81,7 @@ function handleSubmitUser(event) {
           console.log(res.data)
           if (res.data == "welcome you Authentication User") {
              // props.handleLogin(res.data);
-             localStorage.setItem("LogIn", "welcome you Authentication User") //malak
+             localStorage.setItem("LogIn", "welcome you Authentication User") 
           }
           else {
               alert(res.data)

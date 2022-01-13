@@ -6,6 +6,9 @@ import Event from "./routes/img/Event.png";
 
 export default function App() {
 
+
+
+
   /// اساس
   // let [Authentication, setAuthentication] = useState(false);
   // function handleLogin(msg) {
@@ -31,20 +34,22 @@ export default function App() {
 
       <div className="home">
 
-
-
+<img src={Event} alt="A" className="bacground" width={340} />
         <nav>
+
+
+
 
           <Link to="/Events"><button>Events</button></Link>|{" "}
 
           <Link to="/Home"><button>HomePage</button></Link>|{" "}
           <Link to="/Login"><button>Login</button></Link>|{" "} 
-          <Link to="/EnterTicket"><button>EnterTicket </button></Link> |{" "}
+          <Link to="/EnterTicket"><button >EnterTicket </button></Link> |{" "}
 
         {/* <Link to="/Ticket"><button>Ticket </button></Link> |{" "} */}
            <Link to="/Admin"><button>Admin </button></Link> |{" "}
 
-<button onClick={()=>{localStorage.setItem("LogIn","")}}> log out </button>
+<button onClick={()=>{localStorage.setItem("LogIn","")}}> Log Out </button>
         </nav><Outlet />
       </div>
 

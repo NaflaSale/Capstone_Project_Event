@@ -19,7 +19,7 @@ function Admin()//  pro
 
   //new page..2
   let [ConfirmA, setConfirmA] = useState(false)
-  //let [Confirm2, setConfirm2] = useState(false)
+  let [Confirm2, setConfirm2] = useState(false)//today
 //add admin
 let [adminname, setAdminname] = useState("")
 let [password, setPassword] = useState("")
@@ -87,7 +87,10 @@ url:'api/event/add',
   data: MyEvent,
 
 });
-}}
+}
+else alert("no you are user")
+
+}
 
 
 
@@ -103,7 +106,10 @@ url:'api/event/add',
     data: MyAdmin,
   
   });
-  }}
+  }
+  else alert("no you are user")
+
+}
   
   function handleClickDel2(){
     let x=localStorage.getItem("LogIn");
@@ -114,7 +120,10 @@ url:'api/event/add',
       url:`/api/event/delete/${del}`,
 
       
-    });}}
+    });}
+    else alert("no you are user")
+
+  }
     //fun Display admin name
 useEffect(()=>{
   let x=localStorage.getItem("LogIn");
@@ -187,7 +196,7 @@ console.log(data);
 
             {/* <button type="submit"  onClick={handleSubmit}>Sign in</button>   */}
 
-            <br></br> </form> } 
+             </form> } 
             {/* <label>UserName : </label>   
            <input type="text" placeholder="Enter Username" onChange={handleUser} name="username" required/>
            <br></br>  
@@ -254,17 +263,24 @@ console.log(data);
          <br></br>
          <br></br>
 
+         {/* <label htmlFor="id">Delete Event:</label>
+         <br />
+         <input type="text" placeholder="EventName.." id="id" name="id" onChange={handleClickDel3} />
+         <br />
+         <input type="submit" value="Delete" onClick={handleClickDel2}></input> */}
+
+         </form>}
+         <br />
+         <button onClick={()=>setConfirm2 (!Confirm2)}>Delete</button>
+         {Confirm2 &&
+         <form>
          <label htmlFor="id">Delete Event:</label>
          <br />
          <input type="text" placeholder="EventName.." id="id" name="id" onChange={handleClickDel3} />
          <br />
-         {/* <input type="submit" value="Delete" onClick={handleClickDel}></input> */}
          <input type="submit" value="Delete" onClick={handleClickDel2}></input>
-
+         {/* <button type="submit" value="Delete" onClick={handleClickDel2}>Delete</button> */}
          </form>}
-         <br />
-        
-        
          <br />
          <br />
          {/* <Link to="/Admin"><button>AdminPage </button></Link> |{" "} */}

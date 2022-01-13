@@ -1,6 +1,6 @@
 body {
   background-color: #ACCAB0;
-  background:#e1efbb url("https://www.enjpg.com/img/2020/solid-color-9.jpg");
+  background:#e1efbb url("https://addons-media.operacdn.com/media/CACHE/images/themes/25/26125/1.0-rev1/images/fc9df785-cccf-4bd6-baac-04e24fc297e6/571839b3cafe80257755914904086a96.jpg");
   color: rgb(255, 255, 255);
   padding: 40px;
   font-family: Arial;
@@ -13,9 +13,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.home{
-  background-color:rgba(43, 42, 40, 0.384);
-}
+
 .AdminCss{
   text-align: left;
 
@@ -259,33 +257,34 @@ transform: scale(1.05) translateY(-3px);
 .greenButton input[type=submit]:focus {
   background: #6d4;
   color: white;
-  background: -moz-linear-gradient(top, #6d4 0%, #3d6c04 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6d4), color-stop(100%,#3d6c04));
-  background: -webkit-linear-gradient(top, #6d4 0%,#3d6c04 100%);
-  background: -o-linear-gradient(top, #6d4 0%,#3d6c04 100%);
-  background: -ms-linear-gradient(top, #6d4 0%,#3d6c04 100%);
-  background: linear-gradient(to bottom, #6d4 0%,#3d6c04 100%);
+  background: -moz-linear-gradient(top, #6d4 0%, #d6d8d5 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6d4), color-stop(100%,#d9dfd1));
+  background: -webkit-linear-gradient(top, #6d4 0%,#545554 100%);
+  background: -o-linear-gradient(top, #6d4 0%,#4c4d4b 100%);
+  background: -ms-linear-gradient(top, #6d4 0%,#7e807d 100%);
+  background: linear-gradient(to bottom, #6d4 0%,#636462 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a3', endColorstr='#3d6c04',GradientType=0 );
-  box-shadow: inset #064 0 -5px 15px, inset #8e8 0 1px 1px, rgba(0, 255, 75, 0.5) 0 0 10px, white 0 1px 0, white 1px 0 0, white -1px 0 0, white 0 -1px 0, white 0 2px 0, white 2px 0 0, white -2px 0 0, white 0 -2px 0, white 2px 2px 0, white 2px -2px 0, white -2px -2px 0, white -2px 2px 0, rgba(0,0,0,.15) 0px 1px 1px;
+  box-shadow: inset rgb(210, 216, 214) 0 -5px 15px, inset rgb(211, 218, 211) 0 1px 1px, rgba(0, 255, 75, 0.5) 0 0 10px, white 0 1px 0, white 1px 0 0, white -1px 0 0, white 0 -1px 0, white 0 2px 0, white 2px 0 0, white -2px 0 0, white 0 -2px 0, white 2px 2px 0, white 2px -2px 0, white -2px -2px 0, white -2px 2px 0, rgba(0,0,0,.15) 0px 1px 1px;
 }
 .greenButton a:active,
 .greenButton label:active,
 .greenButton button:active,
 .greenButton input[type=button]:active,
 .greenButton input[type=submit]:active {
-  background: #3d6c04;
-  border: 1px solid #005822;
+  background: #a5a7a4;
+  border: 1px solid #cfd6d2;
   border-bottom-color: rgb(142, 156, 148);
-  box-shadow: inset rgb(227, 233, 227) 0 -5px 15px, inset #8e8 0 1px 1px, white 0 1px 0, white 1px 0 0, white -1px 0 0, white 0 -1px 0, white 0 2px 0, white 2px 0 0, white -2px 0 0, white 0 -2px 0, white 2px 2px 0, white 2px -2px 0, white -2px -2px 0, white -2px 2px 0;
+  box-shadow: inset rgb(227, 233, 227) 0 -5px 15px, inset rgb(118, 119, 118) 0 1px 1px, white 0 1px 0, white 1px 0 0, white -1px 0 0, white 0 -1px 0, white 0 2px 0, white 2px 0 0, white -2px 0 0, white 0 -2px 0, white 2px 2px 0, white 2px -2px 0, white -2px -2px 0, white -2px 2px 0;
 }
 
 .event{
   
   margin: 0 auto;
    display: block;
-  background: #f1eeee36;
-  width: 500px;
-  border: 2px solid #13010167;
+  background: #3d39391e;
+  width: 600px;
+  height: 330px;
+  border: 2px solid #6b656567;
  
 }
 /* .imgevent{
@@ -293,7 +292,7 @@ transform: scale(1.05) translateY(-3px);
 } */
 
 button:hover {
-  transform:scale(2);
+  transform:scale(1.1);
 }
 button{
   
@@ -303,12 +302,12 @@ button{
       padding: 1em 2em;
       margin-top: 0px;
      margin-bottom: 13px;
-       background-color:#f7f7f775;
+       background-color:#9ba6b8c9;
       border-radius: 40px;
      border: none;
      cursor: pointer;
        position: relative;
-      box-shadow: 0 2px 25px #0a0a0ab7;
+      box-shadow: 0 2px 25px #fdfbfbe8;
   
 }
 
@@ -339,4 +338,16 @@ button{
 .Review{
   display: grid;
   background-color: rgba(14, 13, 13, 0.103);
+  
+}
+
+
+/* .home{
+font-size: 0pt;
+} */
+
+.table{
+  display:inline;
+  font-family: 'Times New Roman', Times, serif;
+  background-color:#9ba6b8;
 }

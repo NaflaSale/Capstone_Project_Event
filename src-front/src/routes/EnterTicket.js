@@ -75,7 +75,11 @@ function EnterTicket() {
           data: MyTicket,
         
         });
-        }}
+        
+        }
+        else alert("no you are admin")
+        
+      }
 
        
 

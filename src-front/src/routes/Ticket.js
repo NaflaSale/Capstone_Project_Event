@@ -2,6 +2,7 @@
 
 import React, { Component } from "react";
 import axios from "axios"
+import Ticket from "./img/Ticket.png";
 
 
 
@@ -71,12 +72,13 @@ render() {
                       <div >
                       </div>
                         <div className="event">
-                        <img height="200" width="200" src={item.events.src} />
+                            <img  src={Ticket}  alt="A" width={240}/>
+                        {/* <img height="200" width="200" src={item.events.src} /> */}
                         <p>Name :{item.name} </p>
                         <p> Price : {item.price}</p>
                         <p>Event Name :{item.events.eventName} </p>
                         <p>User Name :{item.users.username} </p>
-                        <td><button button class="nnn" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button></td>
+                        <button button class="nnn" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button>
 
                         </div>
                        <div >
@@ -85,8 +87,9 @@ render() {
 </div>
 
                  {/* <td><button button class="bubbly" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button></td> */}
-
+<br></br><br></br>
                         </tr>
+                       
                     )))
                     }
         

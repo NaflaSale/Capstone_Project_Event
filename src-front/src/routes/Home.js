@@ -25,11 +25,11 @@ export default class AllEvent extends Component {
     render() {
         return (
             <div>
-                <table >
+                <table border="2px" className="table" >
                     <thead>
                         <tr>
-                            <th >id</th>
-                            <th >type</th>
+                            <th  >id</th>
+                            <th c>type</th>
                             <th >eventName</th>
                             <th >location</th>
                             <th >time</th>
@@ -54,9 +54,11 @@ export default class AllEvent extends Component {
                         )))
                         }
                     </tbody>
+                   
                 </table>
-                
+               
             </div>
+            
         )}}
                       
 
