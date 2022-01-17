@@ -27,7 +27,6 @@ const[data , setData]=useState([{adminname:""}]); //fun Display admin name
 let [username, setUsername] = useState("")
 let [password2, setPassword2] = useState("")
 
-
 function handleUser(event) {setUsername((username= event.target.value)); }
 function handlePassword2(event) {setPassword2((password2= event.target.value));}
 //
@@ -88,7 +87,7 @@ url:'api/event/add',
 
 });
 }
-else alert("no you are user")
+else alert("You must be admin")
 
 }
 
@@ -107,7 +106,7 @@ else alert("no you are user")
   
   });
   }
-  else alert("no you are user")
+  else alert("You must be admin")
 
 }
   
@@ -121,7 +120,7 @@ else alert("no you are user")
 
       
     });}
-    else alert("no you are user")
+    else alert("You must be admin")
 
   }
     //fun Display admin name
@@ -176,7 +175,6 @@ console.log(data);
     return (
    <div>
            
-
            <button type ="submit" onClick={()=>setConfirmA (!ConfirmA)}>Admin..  </button> 
             
             {ConfirmA &&
@@ -208,7 +206,7 @@ console.log(data);
            <button type="submit">Sign in</button>  */}
             <br />
          <div className="AdminCss">
-               <h2><b><u> ADMIN NAME..</u></b></h2>
+               <h2 ><b><u> ADMIN NAME..</u></b></h2>
                {data.map(adminname=>{
                  return <div>
                    <p>{adminname.adminname}</p>
@@ -288,8 +286,9 @@ console.log(data);
          <br />
          <br />
          {/* <Link to="/Admin"><button>AdminPage </button></Link> |{" "} */}
-
-   </div>
+</div>
      );
    }
+      {/* </div> */}
+
    export default  Admin;

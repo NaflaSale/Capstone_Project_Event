@@ -9,10 +9,9 @@ function EnterTicket() {
 
     let [ticketId, setTicketId] = useState("")
     let [name, setName] = useState("")// Ticket
-    let [price, setPrice] = useState("")
+    // let [price, setPrice] = useState("")
 
     let [id, setId] = useState("") //Event
-    
 
 
   function handleUserName(event) {setUsername((username= event.target.value)); } //USER
@@ -20,7 +19,7 @@ function EnterTicket() {
 
   function handleTicketId(event) {setTicketId((ticketId= event.target.value))} // TICKET
   function handleName(event) {setName((name= event.target.value));} 
-  function handlePrice(event) {setPrice((price= event.target.value));}
+  // function handlePrice(event) {setPrice((price= event.target.value));}
 
   function handleId(event) {setId((id= event.target.value)); }//EVENT
 
@@ -42,7 +41,6 @@ function EnterTicket() {
 
     ticketId:Number(ticketId),
      name:name,
-     price:price,
       events:MyEvent,
       users:MyUser,
   }
@@ -64,7 +62,7 @@ function EnterTicket() {
         });
         
         }
-        else alert("no you are admin")
+        else alert("You must be a user")
         
       }
 

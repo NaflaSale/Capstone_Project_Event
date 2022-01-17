@@ -8,7 +8,7 @@ public class Ticket {
      @Id
     private int ticketId;
     private String name;
-    private String price;
+    //private String price;
 
 
 //with event
@@ -24,10 +24,11 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(int ticketId, String name, String price, Events events, Users users) {
+
+
+    public Ticket(int ticketId, String name, Events events, Users users) {
         this.ticketId = ticketId;
         this.name = name;
-        this.price = price;
         this.events = events;
         this.users = users;
     }
@@ -48,13 +49,7 @@ public class Ticket {
         this.name = name;
     }
 
-    public String getPrice() {
-        return price;
-    }
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
 
     public Users getUsers() {
         return users;
@@ -77,7 +72,6 @@ public class Ticket {
         return "Ticket{" +
                 "ticketId=" + ticketId +
                 ", name='" + name + '\'' +
-                ", price='" + price + '\'' +
                 ", events=" + events +
                 ", users=" + users +
                 '}';

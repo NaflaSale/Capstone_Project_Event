@@ -37,17 +37,6 @@ public class Events {
     public Events() {
     }
 
-//    public Events(int id, String type, String eventName, String location, String time, String duration, String src, Admins admins, List<Ticket> items2) {
-//        this.id = id;
-//        this.type = type;
-//        this.eventName = eventName;
-//        this.location = location;
-//        this.time = time;
-//        this.duration = duration;
-//        this.src = src;
-//        this.admins = admins;
-//        this.items2 = items2;
-//    }
 
     public Events(int id, String type, String eventName, String location, Date time, String price, String duration, String src, Admins admins, List<Users> users, List<Ticket> items2) {
         this.id = id;
@@ -99,13 +88,6 @@ public class Events {
         this.location = location;
     }
 
-//    public String getTime() {
-//        return time;
-//    }
-//
-//    public void setTime(String time) {
-//        this.time = time;
-//    }
 
     public String getDuration() {
         return duration;
@@ -154,6 +136,7 @@ public class Events {
     }
 
     //
+
     @Override
     public String toString() {
         return "Events{" +
@@ -161,10 +144,13 @@ public class Events {
                 ", type='" + type + '\'' +
                 ", eventName='" + eventName + '\'' +
                 ", location='" + location + '\'' +
-                ", time='" + time + '\'' +
+                ", time=" + time +
+                ", price='" + price + '\'' +
                 ", duration='" + duration + '\'' +
                 ", src='" + src + '\'' +
-//                ", admins=" + admins +
+                ", admins=" + admins +
+                ", users=" + users +
+                ", items2=" + items2 +
                 '}';
     }
 }
