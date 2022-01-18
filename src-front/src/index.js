@@ -40,7 +40,9 @@ ReactDOM.render(
             <main style={{ padding: "1rem" }}>
               <p style={{fontFamily:"monospace" , fontSize:"20px"}}>Select please..</p>
               {/* <p className='event2'>The Kingdom of Saudi Arabia is adorned with events, festivals and activities that have a variety of heritage, cultural and entertainment festivals, making it an impressive destination for tourists, pointing the world to the other, making the kingdom’s beauty and preserving its traditions and heritage in the most beautiful ways that delighted adults and children.</p> */}
-
+              {/* <video src="https://youtu.be/kGUMd-K2BY8" width={500}></video> */}
+              {/* <embed src="https://youtu.be/kGUMd-K2BY8" width="400px" height="200px"/> */}
+              {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/eoW5L6Rdy8w" frameborder="0" allowfullscreen></iframe> */}
             </main>
           }
         />

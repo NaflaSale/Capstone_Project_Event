@@ -1,5 +1,7 @@
 import React,{useState ,useEffect} from "react";
 import axios from "axios";
+//import {  Link } from "react-router-dom";
+
 //import { Link, useNavigate } from "react-router-dom"; //nav
 function Login()//  pro
 {
@@ -134,7 +136,7 @@ function handleSubmitUser(event) {
                     <label  style={{fontFamily:"cursive"}}>password</label><br />
                     <input type="password" placeholder="Enter Password" onChange={handlePassword2} name="password" required/> 
                      <br></br><br></br>
-                    <button type="submit"  onClick={handleSubmitUser} style={{ width: "25%", color:'black' , }}><span style={{fontFamily:"cursive" , color:"black"}}>LogIn </span></button>
+                      <button type="submit"  onClick={handleSubmitUser} style={{ width: "25%", color:'black' , }}><span style={{fontFamily:"cursive" , color:"black"}}>LogIn </span></button>
                     <button type="submit" onClick={handleClickAdd2} style={{ width: "40%", color:'black' , }}> <span style={{fontFamily:"cursive" , color:"black"}}>Registration</span></button>
                 </form>
             </div>

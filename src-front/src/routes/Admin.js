@@ -1,7 +1,6 @@
 import React,{useState ,useEffect} from "react";
 import axios from "axios";
-//import {  Link } from "react-router-dom";
-import Login from "./Login"; 
+
 
 function Admin()//  pro
 {
@@ -11,15 +10,15 @@ function Admin()//  pro
   let [location, setLocation] = useState("")
   let [time, setTime] = useState("")
   let [duration, setDuration] = useState("")
-  let [src, setSrc] = useState("")//
+  let [src, setSrc] = useState("")
+  let[price,setPrice]=useState("") 
 
-  let [Confirm, setConfirm] = useState(false)//
-  let[del,setdel]= useState("")// del
-  //let[dell,setdell]=useState("") //new
+  let [Confirm, setConfirm] = useState(false)
+  let[del,setdel]= useState("")
 
   //new page..2
   let [ConfirmA, setConfirmA] = useState(false)
-  let [Confirm2, setConfirm2] = useState(false)//today
+  let [Confirm2, setConfirm2] = useState(false)
 //add admin
 let [adminname, setAdminname] = useState("")
 let [password, setPassword] = useState("")
@@ -27,7 +26,6 @@ const[data , setData]=useState([{adminname:""}]); //fun Display admin name
 //new
 let [username, setUsername] = useState("")
 let [password2, setPassword2] = useState("")
-
 
 function handleUser(event) {setUsername((username= event.target.value)); }
 function handlePassword2(event) {setPassword2((password2= event.target.value));}
@@ -44,9 +42,10 @@ function handlePassword(event) {setPassword((password= event.target.value));}
   function handleTime(event) { setTime((time= event.target.value));}
   function handleDuration(event) {setDuration((duration= event.target.value))}
   function handleSrc(event) {setSrc((src= event.target.value))}
+  function handlePrice(event) {setPrice((price= event.target.value))}
 
-  function handleClickDel3(event) {setdel((del= event.target.value))}//del TADAY
-  //function deleteEventt(event) {setdel((dell= event.target.value))}//del
+
+  function handleClickDel3(event) {setdel((del= event.target.value))}
 
   // let [Authentication,setAuthentication]= useState(false);
   // function handleLogin(){
@@ -60,7 +59,6 @@ function handlePassword(event) {setPassword((password= event.target.value));}
 let MyAdmin ={
   adminname : adminname ,
   password : password,
- //events :MyEvent
 
 }
 let MyEvent ={
@@ -71,10 +69,11 @@ let MyEvent ={
   time:time,
   duration :duration,
   src:src,
+  price:price,
   admins:MyAdmin
 }
 
-function handleClick2(){ //malak
+function handleClick2(){ 
 let x=localStorage.getItem("LogIn");
 console.log("in fun")
 console.log(MyEvent)
@@ -88,7 +87,7 @@ url:'api/event/add',
 
 });
 }
-else alert("no you are user")
+else alert("You must be admin")
 
 }
 
@@ -107,7 +106,7 @@ else alert("no you are user")
   
   });
   }
-  else alert("no you are user")
+  else alert("You must be admin")
 
 }
   
@@ -121,7 +120,7 @@ else alert("no you are user")
 
       
     });}
-    else alert("no you are user")
+    else alert("You must be admin")
 
   }
     //fun Display admin name
@@ -174,13 +173,12 @@ console.log(data);
 // }
 
     return (
-   <div>
+   <div >
            
-
            <button type ="submit" onClick={()=>setConfirmA (!ConfirmA)}>Admin..  </button> 
             
             {ConfirmA &&
-           <form>
+           <form >
             <label>AdminName : </label>   
             <input type="text" placeholder="Enter Username" onChange={handleAdmin} name="username" required/>
             <br></br>  
@@ -208,7 +206,7 @@ console.log(data);
            <button type="submit">Sign in</button>  */}
             <br />
          <div className="AdminCss">
-               <h2><b><u> ADMIN NAME..</u></b></h2>
+               <h2 ><b><u> ADMIN NAME..</u></b></h2>
                {data.map(adminname=>{
                  return <div>
                    <p>{adminname.adminname}</p>
@@ -228,31 +226,35 @@ console.log(data);
        
          <label htmlFor="id">ID:</label>
          <br />
-         <input type="text" placeholder="ID.." id="id" name="id" onChange={handleId} />
+         <input type="text" placeholder="ID.." id="id" name="id" onChange={handleId} required/>
          <br />
          <label htmlFor="name">Event Type: </label>
          <br />
-         <input type="text" placeholder="EventType.." id="name" name="name" onChange={handleType} />
+         <input type="text" placeholder="EventType.." id="name" name="name" onChange={handleType} required/>
          <br />
          <label htmlFor="text">Event Name: </label>
          <br />
-         <input type="text" placeholder="EventName.." id="text" name="text" onChange={handleEventName} />
+         <input type="text" placeholder="EventName.." id="text" name="text" onChange={handleEventName} required/>
          <br />
          <label htmlFor="text">Location: </label>
          <br />
-         <input type="text" placeholder="Location.." id="text" name="text" onChange={handleLocation} />
+         <input type="text" placeholder="Location.." id="text" name="text" onChange={handleLocation} required/>
          <br />
          <label htmlFor="text">Time: </label>
          <br />
-         <input type="text" placeholder="Time.." id="text" name="text" onChange={handleTime} />
+         <input type="date" placeholder="Time.." id="text" name="text" onChange={handleTime} required />
          <br />
          <label htmlFor="text">Duration: </label>
          <br />
-         <input type="text" placeholder="Duration.." id="text" name="text" onChange={handleDuration} />
+         <input type="text" placeholder="Duration.." id="text" name="text" onChange={handleDuration} required/>
          <br />
          <label>Src : </label>  
          <br></br> 
-         <input name="picture" placeholder="Src.. "  onChange={handleSrc} name="id" required/> 
+         <input type="text" placeholder="Src.. "  onChange={handleSrc} name="id" required/> 
+         <br></br>
+         <label>price : </label>  
+         <br></br> 
+         <input name="price" placeholder="price.. "  onChange={handlePrice} name="id" required/> 
          <br></br>
          <label>AdminName: </label> 
          <br></br>  
@@ -276,7 +278,7 @@ console.log(data);
          <form>
          <label htmlFor="id">Delete Event:</label>
          <br />
-         <input type="text" placeholder="EventName.." id="id" name="id" onChange={handleClickDel3} />
+         <input type="text" placeholder="EventName.." id="id" name="id" onChange={handleClickDel3} required />
          <br />
          <input type="submit" value="Delete" onClick={handleClickDel2}></input>
          {/* <button type="submit" value="Delete" onClick={handleClickDel2}>Delete</button> */}
@@ -284,8 +286,9 @@ console.log(data);
          <br />
          <br />
          {/* <Link to="/Admin"><button>AdminPage </button></Link> |{" "} */}
-
-   </div>
+</div>
      );
    }
+      {/* </div> */}
+
    export default  Admin;

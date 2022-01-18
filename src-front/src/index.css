@@ -16,6 +16,8 @@ code {
 
 .AdminCss{
   text-align: left;
+  font-family:'Courier New', Courier, monospace;
+  
 
 }
 body {
@@ -118,7 +120,7 @@ outline:none;
   padding: 15px;
   border: none;
   border-radius: 50px;
-  color: white;
+  color: rgba(243, 240, 240, 0.911);
   font-weight: 400;
   font-size: 1.2rem;
   margin-top: 10px;
@@ -176,11 +178,11 @@ transform: scale(1.05) translateY(-3px);
   top: 0;
   left: 0;
   border-radius: 100%;
-  border: 2px solid red;
+  border: 2px solid rgba(107, 104, 104, 0.925);
   transform: rotate(3deg);
   -ms-transform: rotate(3deg);
   -webkit-transform: rotate(3deg);
-  box-shadow: inset red -1px 0 0, inset red -2px 0 0, inset red -3px 0 0, inset red -4px 0 0;
+  box-shadow: inset rgb(233, 230, 230) -1px 0 0, inset rgba(219, 210, 210, 0.466) -2px 0 0, inset rgb(245, 239, 239) -3px 0 0, inset rgba(185, 185, 185, 0.664) -4px 0 0;
   z-index: 50;
   transition: all .5s ease-in-out;
 }
@@ -231,17 +233,16 @@ transform: scale(1.05) translateY(-3px);
   user-select: none;
   cursor: pointer;
   background: rgb(254, 255, 252);
-  background: -moz-linear-gradient(top, #6a1 0%, #dadbd9 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6a1), color-stop(100%,#e1e4de));
-  background: -webkit-linear-gradient(top, #6a1 0%,#3d6c04 100%);
-  background: -o-linear-gradient(top, #6a1 0%,#3d6c04 100%);
-  background: -ms-linear-gradient(top, #6a1 0%,#3d6c04 100%);
-  background: linear-gradient(to bottom, #6a1 0%,#3d6c04 100%);
+  background: -moz-linear-gradient(top, rgb(222, 223, 221) 0%, #dadbd9 100%);
+  background: -webkit-linear-gradient(top, rgb(116, 117, 115) 0%,#aeb1aa28 100%);
+  background: -o-linear-gradient(top, rgba(229, 233, 224, 0.24) 0%,#e7e9e47c 100%);
+  background: -ms-linear-gradient(top, rgba(196, 195, 195, 0.473) 0%,#171815 100%);
+  background: linear-gradient(to bottom, rgba(158, 158, 156, 0.507) 0%,#121312 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6a1', endColorstr='#3d6c04',GradientType=0 );
   color: #fff;
   text-shadow: rgb(202, 218, 207) 1px 1px 0;
-  border: 1px solid #6a1;
-  border-bottom-color: #005822;
+  border: 1px solid rgb(119, 119, 118);
+  border-bottom-color: #e7f0ea3b;
   border-radius: 3px;
   box-shadow: inset rgb(212, 219, 215) 0 -5px 15px, inset #8e8 0 1px 1px, white 0 1px 0, white 1px 0 0, white -1px 0 0, white 0 -1px 0, white 0 2px 0, white 2px 0 0, white -2px 0 0, white 0 -2px 0, white 2px 2px 0, white 2px -2px 0, white -2px -2px 0, white -2px 2px 0, rgba(0,0,0,.15) 0px 3px 5px;
 }
@@ -255,16 +256,16 @@ transform: scale(1.05) translateY(-3px);
 .greenButton input[type=button]:focus,
 .greenButton input[type=submit]:hover,
 .greenButton input[type=submit]:focus {
-  background: #6d4;
+  background: rgba(158, 160, 157, 0.541);
   color: white;
-  background: -moz-linear-gradient(top, #6d4 0%, #d6d8d5 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6d4), color-stop(100%,#d9dfd1));
-  background: -webkit-linear-gradient(top, #6d4 0%,#545554 100%);
-  background: -o-linear-gradient(top, #6d4 0%,#4c4d4b 100%);
-  background: -ms-linear-gradient(top, #6d4 0%,#7e807d 100%);
-  background: linear-gradient(to bottom, #6d4 0%,#636462 100%);
+  background: -moz-linear-gradient(top, rgb(154, 158, 153) 0%, #d6d8d5 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(159, 165, 158)), color-stop(100%,#d9dfd1));
+  background: -webkit-linear-gradient(top, rgb(162, 165, 162) 0%,#545554 100%);
+  background: -o-linear-gradient(top, rgb(125, 129, 124) 0%,#4c4d4b 100%);
+  background: -ms-linear-gradient(top, rgb(113, 116, 112) 0%,#7e807d 100%);
+  background: linear-gradient(to bottom, rgb(126, 128, 125) 0%,#636462 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a3', endColorstr='#3d6c04',GradientType=0 );
-  box-shadow: inset rgb(210, 216, 214) 0 -5px 15px, inset rgb(211, 218, 211) 0 1px 1px, rgba(0, 255, 75, 0.5) 0 0 10px, white 0 1px 0, white 1px 0 0, white -1px 0 0, white 0 -1px 0, white 0 2px 0, white 2px 0 0, white -2px 0 0, white 0 -2px 0, white 2px 2px 0, white 2px -2px 0, white -2px -2px 0, white -2px 2px 0, rgba(0,0,0,.15) 0px 1px 1px;
+  box-shadow: inset rgb(210, 216, 214) 0 -5px 15px, inset rgb(211, 218, 211) 0 1px 1px, rgba(230, 233, 231, 0.5) 0 0 10px, white 0 1px 0, white 1px 0 0, white -1px 0 0, white 0 -1px 0, white 0 2px 0, white 2px 0 0, white -2px 0 0, white 0 -2px 0, white 2px 2px 0, white 2px -2px 0, white -2px -2px 0, white -2px 2px 0, rgba(0,0,0,.15) 0px 1px 1px;
 }
 .greenButton a:active,
 .greenButton label:active,
@@ -298,7 +299,7 @@ button{
   
     font-family: ‘Helvetica’, Arial’, sans-serif;
     display: inline-block;
-      font-size: 12px;
+      font-size: 14px;
       padding: 1em 2em;
       margin-top: 0px;
      margin-bottom: 13px;
@@ -350,4 +351,20 @@ font-size: 0pt;
   display:inline;
   font-family: 'Times New Roman', Times, serif;
   background-color:#9ba6b8;
+  font-size: 20px;
+}
+.InterTicket{
+  font-size: 20px;
+
+
+}
+input{
+  width: 25%;
+  padding: 10px;
+  margin-bottom:10px ;
+  font-size: 12px;
+   text-transform: capitalize;
+  box-shadow: 3px 3px 5px #9ba6b8c9;
+  border: 2px solid #9ba6b8c9;
+  border-radius: 5px;
 }

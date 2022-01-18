@@ -75,7 +75,7 @@ render() {
                             <img  src={Ticket}  alt="A" width={240}/>
                         {/* <img height="200" width="200" src={item.events.src} /> */}
                         <p>Name :{item.name} </p>
-                        <p> Price : {item.price}</p>
+                        <p> Price : {item.events.price}</p>
                         <p>Event Name :{item.events.eventName} </p>
                         <p>User Name :{item.users.username} </p>
                         <button button class="nnn" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button>

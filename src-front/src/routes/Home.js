@@ -25,16 +25,18 @@ export default class AllEvent extends Component {
     render() {
         return (
             <div>
-                <table border="2px" className="table" >
+                <table className="table" >
                     <thead>
                         <tr>
-                            <th  >id</th>
-                            <th c>type</th>
+                            <th >id</th>
+                            <th >type</th>
                             <th >eventName</th>
                             <th >location</th>
                             <th >time</th>
                             <th >duration</th>
                             <th >src</th>
+                            <th >price</th>
+
 
                         </tr>
                     </thead>
@@ -48,6 +50,8 @@ export default class AllEvent extends Component {
                                 <td>{item.time}</td>
                                 <td>{item.duration}</td>
                                 <td><img className="imgevent" height="100" width="100" src={item.src} /></td>
+                                <td>{item.price}</td>
+<br></br><br></br>
                                 <Link to="/EnterTicket"><td><button >add..</button></td></Link>
                               {/* <td><button onClick={(e) => this.deleteSpecialist(item.id, e)}>delete..</button></td> */}
                             </tr>

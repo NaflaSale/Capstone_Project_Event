@@ -1,7 +1,6 @@
 import React,{useState } from "react";
 import axios from "axios";
 import {  Link } from "react-router-dom";
-//import Login from "./routes/Login";
 
 
 function EnterTicket() {
@@ -10,14 +9,9 @@ function EnterTicket() {
 
     let [ticketId, setTicketId] = useState("")
     let [name, setName] = useState("")// Ticket
-    let [price, setPrice] = useState("")
+    // let [price, setPrice] = useState("")
 
-    let [id, setId] = useState("")
-    // let [eventName,setEventName]= useState("") //Event
-    // let [location, setLocation] = useState("")
-    // let [time, setTime] = useState("")
-    // let [duration, setDuration] = useState("")
-   
+    let [id, setId] = useState("") //Event
 
 
   function handleUserName(event) {setUsername((username= event.target.value)); } //USER
@@ -25,24 +19,16 @@ function EnterTicket() {
 
   function handleTicketId(event) {setTicketId((ticketId= event.target.value))} // TICKET
   function handleName(event) {setName((name= event.target.value));} 
-  function handlePrice(event) {setPrice((price= event.target.value));}
+  // function handlePrice(event) {setPrice((price= event.target.value));}
 
-  function handleId(event) {setId((id= event.target.value)); }
-//   function handleEventName(event) {setEventName((eventName= event.target.value)); } //EVENT
-//   function handleLocation(event) {setLocation((location= event.target.value));}
-//   function handleTime(event) { setTime((time= event.target.value));}
-//   function handleDuration(event) {setDuration((duration= event.target.value))}
-
+  function handleId(event) {setId((id= event.target.value)); }//EVENT
 
 
 
   let MyEvent ={
     id : Number(id) ,
     
-    // eventName : eventName,
-    // location :location,
-    // time:time,
-    // duration :duration,
+    
    
   }
   
@@ -55,7 +41,6 @@ function EnterTicket() {
 
     ticketId:Number(ticketId),
      name:name,
-     price:price,
       events:MyEvent,
       users:MyUser,
   }
@@ -77,55 +62,39 @@ function EnterTicket() {
         });
         
         }
-        else alert("no you are admin")
+        else alert("You must be a user")
         
       }
 
        
 
 return (
-    <div>
+    <div className="InterTicket">
        
         <form onSubmit={(e)=>{handleClickMyTicket(e)}}>
         <h3>ADD Ticket..</h3>
        
        <label htmlFor="id">User Name:</label>
        <br />
-       <input type="text" placeholder="User Name" id="name" name="name" onChange={handleUserName} />
+       <input type="text" placeholder="User Name" id="name" name="name" onChange={handleUserName} required/>
        <br />
        <label htmlFor="name">Ticket id: </label>
        <br />
-       <input type="text" placeholder="Ticket Name.." id="name" name="name" onChange={handleTicketId} />
+       <input type="text" placeholder="Ticket Name.." id="name" name="name" onChange={handleTicketId} required/>
        <br />
        <label htmlFor="name">Ticket Name: </label>
        <br />
-       <input type="text" placeholder="Ticket Name.." id="name" name="name" onChange={handleName} />
+       <input type="text" placeholder="Ticket Name.." id="name" name="name" onChange={handleName} required/>
        <br />
-       <label htmlFor="name">Ticket Price: </label>
+       {/* <label htmlFor="name">Ticket Price: </label>
        <br />
        <input type="text" placeholder="Ticket Price.." id="name" name="name" onChange={handlePrice} />
-       <br />
+       <br /> */}
        <label htmlFor="name">Event id: </label>
        <br />
-       <input type="text" placeholder="Event id:.." id="name" name="name" onChange={handleId} />
+       <input type="text" placeholder="Event id:.." id="name" name="name" onChange={handleId} required/>
        <br></br>
-       {/* <label htmlFor="text">Event Name: </label>
-       <br />
-       <input type="text" placeholder="EventName.." id="text" name="text" onChange={handleEventName} />
-       <br />
-       <label htmlFor="text">Location: </label>
-       <br />
-       <input type="text" placeholder="Location.." id="text" name="text" onChange={handleLocation} />
-       <br />
-       <label htmlFor="text">Time: </label>
-       <br />
-       <input type="text" placeholder="Time.." id="text" name="text" onChange={handleTime} />
-       <br />
-       <label htmlFor="text">Duration: </label>
-       <br />
-       <input type="text" placeholder="Duration.." id="text" name="text" onChange={handleDuration} />
-       <br /> */}
-       
+      
        <button type="submit" value="Add"  >Add</button> 
        <Link to="/Ticket"><td><button >Ticket..</button></td></Link>
 

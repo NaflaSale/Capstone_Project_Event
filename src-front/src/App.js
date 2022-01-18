@@ -49,7 +49,7 @@ export default function App() {
         {/* <Link to="/Ticket"><button>Ticket </button></Link> |{" "} */}
            <Link to="/Admin"><button>Admin </button></Link> |{" "}
 
-<button onClick={()=>{localStorage.setItem("LogIn","")}}> Log Out </button>
+       <button onClick={()=>{localStorage.setItem("LogIn","")}}> Log Out </button>
         </nav><Outlet />
       </div>
 
