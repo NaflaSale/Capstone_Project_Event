@@ -14,7 +14,9 @@ import java.util.List;
 public class Users {
 
     @Id
+    @Column(updatable = false)
     private String username;
+    @Column(updatable = false, nullable = false)
     private String password;
     //
     @ManyToMany

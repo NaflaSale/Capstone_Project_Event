@@ -12,7 +12,9 @@ import java.util.List;
 public class Admins {
 
     @Id
+    @Column(updatable = false ,nullable = false)
     private String adminname;
+    @Column(updatable = false ,nullable = false)
     private String password;
 
     @OneToMany(mappedBy = "admins")

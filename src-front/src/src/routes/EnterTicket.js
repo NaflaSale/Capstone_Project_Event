@@ -24,6 +24,7 @@ function EnterTicket() {
   function handleId(event) {setId((id= event.target.value)); }//EVENT
 
 
+  let x=localStorage.getItem("LogIn"); //عرض الصفحة
 
   let MyEvent ={
     id : Number(id) ,
@@ -69,22 +70,25 @@ function EnterTicket() {
        
 
 return (
-    <div>
+    <div className="InterTicket">
+      <h3>User Private Page</h3>
+            { x == "welcome you Authentication User" &&
+
        
         <form onSubmit={(e)=>{handleClickMyTicket(e)}}>
         <h3>ADD Ticket..</h3>
        
        <label htmlFor="id">User Name:</label>
        <br />
-       <input type="text" placeholder="User Name" id="name" name="name" onChange={handleUserName} />
+       <input type="text" placeholder="User Name" id="name" name="name" onChange={handleUserName} required/>
        <br />
        <label htmlFor="name">Ticket id: </label>
        <br />
-       <input type="text" placeholder="Ticket Name.." id="name" name="name" onChange={handleTicketId} />
+       <input type="text" placeholder="Ticket Name.." id="name" name="name" onChange={handleTicketId} required/>
        <br />
        <label htmlFor="name">Ticket Name: </label>
        <br />
-       <input type="text" placeholder="Ticket Name.." id="name" name="name" onChange={handleName} />
+       <input type="text" placeholder="Ticket Name.." id="name" name="name" onChange={handleName} required/>
        <br />
        {/* <label htmlFor="name">Ticket Price: </label>
        <br />
@@ -92,7 +96,7 @@ return (
        <br /> */}
        <label htmlFor="name">Event id: </label>
        <br />
-       <input type="text" placeholder="Event id:.." id="name" name="name" onChange={handleId} />
+       <input type="text" placeholder="Event id:.." id="name" name="name" onChange={handleId} required/>
        <br></br>
       
        <button type="submit" value="Add"  >Add</button> 
@@ -107,7 +111,7 @@ return (
        
        </form>
        
-
+      }
  </div>
  );
 }

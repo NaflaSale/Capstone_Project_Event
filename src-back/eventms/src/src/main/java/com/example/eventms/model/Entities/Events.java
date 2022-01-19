@@ -14,7 +14,7 @@ public class Events {
     private String type;
     private String eventName;
     private String location;
-    private Date time;
+    private String time;
     private String price;
     private String duration;
     private String src;
@@ -38,7 +38,7 @@ public class Events {
     }
 
 
-    public Events(int id, String type, String eventName, String location, Date time, String price, String duration, String src, Admins admins, List<Users> users, List<Ticket> items2) {
+    public Events(int id, String type, String eventName, String location, String time, String price, String duration, String src, Admins admins, List<Users> users, List<Ticket> items2) {
         this.id = id;
         this.type = type;
         this.eventName = eventName;
@@ -105,7 +105,11 @@ public class Events {
         this.src = src;
     }
 
-    public void setTime(Date time) {
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
         this.time = time;
     }
 
