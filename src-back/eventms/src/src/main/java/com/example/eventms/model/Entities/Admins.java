@@ -29,10 +29,6 @@ public class Admins {
     }
 
 
-
-
-    //
-
     public Admins() {
     }
 
@@ -67,7 +63,6 @@ public class Admins {
         return "Admins{" +
                 "adminname='" + adminname + '\'' +
                 ", password='" + password + '\'' +
-//                ", items=" + items +
                 '}';
     }
 }

@@ -12,7 +12,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 
@@ -30,18 +32,18 @@ class AdminServiceTest {
     @Test
     void testGetAdmins() {
         List<Admins> result = adminService.getAdmins();
-        Assertions.assertEquals(Arrays.<Admins>asList(new Admins("adminname", "password", Arrays.<Events>asList(new Events(1, "type", "eventName", "location", new GregorianCalendar(2022, Calendar.JANUARY, 17, 14, 16).getTime(), "price", "duration", "src", null, Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(new Ticket(0, "name", null, new Users("username", "password", Arrays.<Events>asList(null)))))))), result);
+        Assertions.assertEquals(Arrays.<Admins>asList(new Admins("adminname", "password", Arrays.<Events>asList(new Events(0, "type", "eventName", "location", "time", "price", "duration", "src", null, Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(new Ticket(0, "name", null, new Users("username", "password", Arrays.<Events>asList(null)))))))), result);
     }
 
     @Test
     void testGetAdmin() {
         Optional<Admins> result = adminService.getAdmin("adminId");
-        Assertions.assertEquals(null, result);
+        Assertions.assertEquals(Optional.empty(), result);
     }
 
     @Test
     void testAddNewAdmin() {
-        adminService.addNewAdmin(new Admins("adminname", "password", Arrays.<Events>asList(new Events(0, "type", "eventName", "location", new GregorianCalendar(2022, Calendar.JANUARY, 17, 14, 16).getTime(), "price", "duration", "src", null, Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(new Ticket(0, "name", null, new Users("username", "password", Arrays.<Events>asList(null))))))));
+        adminService.addNewAdmin(new Admins("adminname", "password", Arrays.<Events>asList(new Events(0, "type", "eventName", "location", "time", "price", "duration", "src", null, Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(new Ticket(0, "name", null, new Users("username", "password", Arrays.<Events>asList(null))))))));
     }
 
     @Test

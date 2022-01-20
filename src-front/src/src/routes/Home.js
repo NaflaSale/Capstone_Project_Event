@@ -18,14 +18,6 @@ export default class AllEvent extends Component {
             this.setState({ EventList });
         });
     }
-    // deleteSpecialist(id) {
-    //     axios.delete(`/api/event/delete/${id}`)
-    //         .then(res => {
-    //             const EventList = this.state.EventList.filter(item => item.id !== id);
-    //             this.setState({ EventList });
-    //        })
-    // }
-    
     render() {
         return (
             <div>
@@ -55,11 +47,8 @@ export default class AllEvent extends Component {
                                 <td>{item.duration}</td>
                                 <td><img className="imgevent" height="100" width="100" src={item.src} /></td>
                                 <td>{item.price}</td>
-<br></br><br></br>             
-
-
+                                <br></br><br></br>             
                                 <Link to="/EnterTicket"><td><button >add..</button></td></Link>
-                              {/* <td><button onClick={(e) => this.deleteSpecialist(item.id, e)}>delete..</button></td> */}
                             </tr>
                         )))
                         }

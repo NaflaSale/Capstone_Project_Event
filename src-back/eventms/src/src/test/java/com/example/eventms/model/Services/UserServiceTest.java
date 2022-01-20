@@ -12,7 +12,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 
@@ -30,7 +32,7 @@ class UserServiceTest {
     @Test
     void testGetUsers() {
         List<Users> result = userService.getUsers();
-        Assertions.assertEquals(Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(new Events(0, "type", "eventName", "location", new GregorianCalendar(2022, Calendar.JANUARY, 17, 16, 15).getTime(), "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(null), Arrays.<Ticket>asList(new Ticket(0, "name", null, null)))))), result);
+        Assertions.assertEquals(Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(new Events(0, "type", "eventName", "location", "time", "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(null), Arrays.<Ticket>asList(new Ticket(0, "name", null, null)))))), result);
     }
 
     @Test
@@ -41,7 +43,7 @@ class UserServiceTest {
 
     @Test
     void testAddNewUser() {
-        userService.addNewUser(new Users("username", "password", Arrays.<Events>asList(new Events(0, "type", "eventName", "location", new GregorianCalendar(2022, Calendar.JANUARY, 17, 16, 15).getTime(), "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(null), Arrays.<Ticket>asList(new Ticket(0, "name", null, null))))));
+        userService.addNewUser(new Users("username", "password", Arrays.<Events>asList(new Events(0, "type", "eventName", "location", "time", "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(null), Arrays.<Ticket>asList(new Ticket(0, "name", null, null))))));
     }
 
     @Test

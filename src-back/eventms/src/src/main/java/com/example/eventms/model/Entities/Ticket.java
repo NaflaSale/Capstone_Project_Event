@@ -8,14 +8,13 @@ public class Ticket {
      @Id
     private int ticketId;
     private String name;
-    //private String price;
 
 
-//with event
+    //with event
     @ManyToOne
     @JoinColumn(name = "E_id" , referencedColumnName = "id")
     private Events events;
-////with user
+   //with user
   @ManyToOne
   @JoinColumn(name = "U_id" , referencedColumnName = "username")
   private Users users;
@@ -48,8 +47,6 @@ public class Ticket {
     public void setName(String name) {
         this.name = name;
     }
-
-
 
     public Users getUsers() {
         return users;

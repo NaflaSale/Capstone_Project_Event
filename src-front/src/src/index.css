@@ -6,22 +6,21 @@ body {
   font-family: Arial;
   text-align: center;
 }
-
-
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 .AdminCss{
   text-align: left;
   font-family:'Courier New', Courier, monospace;
-  
-
+   margin:2% 0;
+   float:left;
+  background: #9ba6b8c9;
+  width: 500px;
+  border: 2px solid #eef0f1bd;
 }
 body {
-  font-family: 'Roboto', sans-serif!important;
+font-family: 'Roboto', sans-serif!important;
 margin:0;
 padding:0;
 box-sizing: border-box;
@@ -48,8 +47,7 @@ width: 60rem;
   border-radius: 1.5rem;
   box-shadow: 4px 3px 20px #3535358c;
   display:flex;
-  flex-direction: row;
-  
+  flex-direction: row;  
 }
 
 .leftside {
@@ -97,7 +95,7 @@ width: 100%;
   color: #615a5a;
   font-size: 1.1rem;
   font-weight: 500;
-outline:none;
+  outline:none;
 }
 
 .expcvv {
@@ -132,7 +130,7 @@ outline:none;
 .button:hover
 {
 transform: scale(1.05) translateY(-3px);
-  box-shadow: 3px 3px 6px #38373785;
+  box-shadow: 3px 3px 6px #9ba6b8c9;
 }
 
 @media only screen and (max-width: 100px) {
@@ -182,7 +180,7 @@ transform: scale(1.05) translateY(-3px);
   transform: rotate(3deg);
   -ms-transform: rotate(3deg);
   -webkit-transform: rotate(3deg);
-  box-shadow: inset rgb(233, 230, 230) -1px 0 0, inset rgba(219, 210, 210, 0.466) -2px 0 0, inset rgb(245, 239, 239) -3px 0 0, inset rgba(185, 185, 185, 0.664) -4px 0 0;
+  box-shadow: inset rgba(151, 149, 149, 0.596) -1px 0 0, inset rgba(219, 210, 210, 0.466) -2px 0 0, inset rgb(245, 239, 239) -3px 0 0, inset rgba(185, 185, 185, 0.664) -4px 0 0;
   z-index: 50;
   transition: all .5s ease-in-out;
 }
@@ -232,7 +230,7 @@ transform: scale(1.05) translateY(-3px);
   -o-user-select: none;
   user-select: none;
   cursor: pointer;
-  background: rgb(254, 255, 252);
+  background: #9ba6b8c9;
   background: -moz-linear-gradient(top, rgb(222, 223, 221) 0%, #dadbd9 100%);
   background: -webkit-linear-gradient(top, rgb(116, 117, 115) 0%,#9ba6b8c9 100%);
   background: -o-linear-gradient(top, rgba(116, 117, 115) 0%,#9ba6b8c9 100%);
@@ -287,9 +285,7 @@ transform: scale(1.05) translateY(-3px);
   border: 2px solid #6b656567;
  
 }
-/* .imgevent{
-  align-self: center;
-} */
+
 
 button:hover {
   transform:scale(1.1);
@@ -315,10 +311,7 @@ h3{
   font-size: 30px;
   
 }
-/* img.imgEvent{
-  text-align: center;
-  Align:"Center"
-} */
+
 .ticket{
   min-height: 75%;;
   display: flex;
@@ -346,10 +339,6 @@ h3{
 }
 
 
-/* .home{
-font-size: 0pt;
-} */
-
 .table{
   display:inline;
   font-family: 'Times New Roman', Times, serif;
@@ -374,4 +363,14 @@ input{
 .bacground{
   width: 50px;
   margin: 2em;
+}
+marquee{
+  font-size: 23px;
+  font-family:'Courier New', Courier, monospace;
+  color: #000;
+}
+.details{
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
+  color: #000;
 }

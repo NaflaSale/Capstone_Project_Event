@@ -12,7 +12,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 
@@ -30,7 +32,7 @@ class TicketServiceTest {
     @Test
     void testGetTickets() {
         List<Ticket> result = ticketService.getTickets();
-        Assertions.assertEquals(Arrays.<Ticket>asList(new Ticket(0, "name", new Events(0, "type", "eventName", "location", new GregorianCalendar(2022, Calendar.JANUARY, 17, 16, 14).getTime(), "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(null)), new Users("username", "password", Arrays.<Events>asList(new Events(0, "type", "eventName", "location", new GregorianCalendar(2022, Calendar.JANUARY, 17, 16, 14).getTime(), "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(null), Arrays.<Ticket>asList(null)))))), result);
+        Assertions.assertEquals(Arrays.<Ticket>asList(new Ticket(0, "name", new Events(0, "type", "eventName", "location", "time", "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(null)), new Users("username", "password", Arrays.<Events>asList(new Events(0, "type", "eventName", "location", "time", "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(null), Arrays.<Ticket>asList(null)))))), result);
     }
 
     @Test
@@ -41,7 +43,7 @@ class TicketServiceTest {
 
     @Test
     void testAddNewTicket() {
-        ticketService.addNewTicket(new Ticket(0, "name", new Events(0, "type", "eventName", "location", new GregorianCalendar(2022, Calendar.JANUARY, 17, 16, 14).getTime(), "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(null)), new Users("username", "password", Arrays.<Events>asList(new Events(0, "type", "eventName", "location", new GregorianCalendar(2022, Calendar.JANUARY, 17, 16, 14).getTime(), "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(null), Arrays.<Ticket>asList(null))))));
+        ticketService.addNewTicket(new Ticket(0, "name", new Events(0, "type", "eventName", "location", "time", "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(null)), new Users("username", "password", Arrays.<Events>asList(new Events(0, "type", "eventName", "location", "time", "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(null), Arrays.<Ticket>asList(null))))));
     }
 
     @Test

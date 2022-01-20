@@ -1,29 +1,17 @@
-
-
 import React, { Component } from "react";
 import axios from "axios"
 import Ticket from "./img/Ticket.png";
 
 
-
-
 export default class MyTicket extends Component {
 
-
-    constructor(props) {
+ constructor(props) {
         super(props);
-
         this.state = {
-
             TicketList: [],
 
-        };
+    };
     }
-
-
-
-
-
 
     componentDidMount() {
         let x=localStorage.getItem("LogIn");
@@ -44,14 +32,6 @@ export default class MyTicket extends Component {
             })
     }
 
-
-
-    
-
-
-
-
-
 render() {
     return (
 
@@ -61,33 +41,18 @@ render() {
                <p></p>
                     {this.state.TicketList.map((item => (
                         <tr key={item.ticketId}>
-
-
-                       <div >
-                        
-                         <div >
-                           <div >
-                         </div>
-                        </div>
                       <div >
                       </div>
                         <div className="event">
-                            <img  src={Ticket}  alt="A" width={240}/>
-                        {/* <img height="200" width="200" src={item.events.src} /> */}
-                        <p>Name :{item.name} </p>
-                        <p> Price : {item.events.price}</p>
-                        <p>Event Name :{item.events.eventName} </p>
-                        <p>User Name :{item.users.username} </p>
+                        <img  src={Ticket}  alt="A" width={240}/>
+                        <p>Name:{item.name} </p>
+                        <p>Price: {item.events.price}</p>
+                        <p>Event Name:{item.events.eventName} </p>
+                        <p>User Name:{item.users.username} </p>
                         <button button class="nnn" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button>
-
                         </div>
-                       <div >
-
-</div>
-</div>
-
-                 {/* <td><button button class="bubbly" onClick={(e) => this.deleteUseGarden(item.ticketId, e)}>delete</button></td> */}
-<br></br><br></br>
+                      
+                        <br></br><br></br>
                         </tr>
                        
                     )))

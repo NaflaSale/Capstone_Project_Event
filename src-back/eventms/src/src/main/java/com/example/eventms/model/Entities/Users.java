@@ -1,8 +1,6 @@
 package com.example.eventms.model.Entities;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -18,14 +16,14 @@ public class Users {
     private String username;
     @Column(updatable = false, nullable = false)
     private String password;
-    //
+    //with event
     @ManyToMany
     @JoinTable(name = "USER_EVENT",
             joinColumns = @JoinColumn(name = "user_name"),
             inverseJoinColumns = @JoinColumn(name = "Event_id"))
-    private List<Events> events = new ArrayList<>();
+            private List<Events> events = new ArrayList<>();
 
-////with ticket
+    //with ticket
   @OneToMany(mappedBy = "users")
   @JsonIgnore
   private List<Ticket> items3= new ArrayList<>();

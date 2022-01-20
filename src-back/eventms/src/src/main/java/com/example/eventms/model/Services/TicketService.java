@@ -1,8 +1,6 @@
 package com.example.eventms.model.Services;
 
-import com.example.eventms.model.Entities.Events;
 import com.example.eventms.model.Entities.Ticket;
-import com.example.eventms.model.Repository.EventRepository;
 import com.example.eventms.model.Repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

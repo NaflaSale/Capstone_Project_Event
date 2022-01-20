@@ -1,8 +1,7 @@
 package com.example.eventms.model.Services;
 
-import com.example.eventms.model.Entities.Admins;
+
 import com.example.eventms.model.Entities.Users;
-import com.example.eventms.model.Repository.AdminRepository;
 import com.example.eventms.model.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

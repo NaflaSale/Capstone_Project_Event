@@ -1,8 +1,6 @@
 package com.example.eventms.controller;
 
-import com.example.eventms.model.Entities.Events;
 import com.example.eventms.model.Entities.Ticket;
-import com.example.eventms.model.Services.EventService;
 import com.example.eventms.model.Services.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

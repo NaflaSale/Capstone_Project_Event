@@ -12,7 +12,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.Mockito.*;
 
@@ -29,10 +31,10 @@ class EventControllerTest {
 
     @Test
     void testGetEvents() {
-        when(eventService.getEvents()).thenReturn(Arrays.<Events>asList(new Events(0, "type", "eventName", "location", new GregorianCalendar(2022, Calendar.JANUARY, 17, 16, 20).getTime(), "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(new Ticket(0, "name", null, new Users("username", "password", Arrays.<Events>asList(null)))))));
+        when(eventService.getEvents()).thenReturn(Arrays.<Events>asList(new Events(0, "type", "eventName", "location", "time", "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(new Ticket(0, "name", null, new Users("username", "password", Arrays.<Events>asList(null)))))));
 
         List<Events> result = eventController.getEvents();
-        Assertions.assertEquals(Arrays.<Events>asList(new Events(0, "type", "eventName", "location", new GregorianCalendar(2022, Calendar.JANUARY, 17, 16, 20).getTime(), "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(new Ticket(0, "name", null, new Users("username", "password", Arrays.<Events>asList(null)))))), result);
+        Assertions.assertEquals(Arrays.<Events>asList(new Events(0, "type", "eventName", "location", "time", "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(new Ticket(0, "name", null, new Users("username", "password", Arrays.<Events>asList(null)))))), result);
     }
 
     @Test
@@ -45,7 +47,7 @@ class EventControllerTest {
 
     @Test
     void testRegisterNewEvent() {
-        eventController.registerNewEvent(new Events(0, "type", "eventName", "location", new GregorianCalendar(2022, Calendar.JANUARY, 17, 16, 20).getTime(), "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(new Ticket(0, "name", null, new Users("username", "password", Arrays.<Events>asList(null))))));
+        eventController.registerNewEvent(new Events(0, "type", "eventName", "location", "time", "price", "duration", "src", new Admins("adminname", "password", Arrays.<Events>asList(null)), Arrays.<Users>asList(new Users("username", "password", Arrays.<Events>asList(null))), Arrays.<Ticket>asList(new Ticket(0, "name", null, new Users("username", "password", Arrays.<Events>asList(null))))));
     }
 
     @Test

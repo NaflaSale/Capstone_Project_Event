@@ -39,8 +39,7 @@ public class AdminController {
             adminService.deleteAdmin(adminId);
         }
 
-//
-//
+
     @GetMapping(path = "login")
    public String checkLogin(@RequestParam (name = "adminname") String adminname , @RequestParam (name = "password")
             String password ) {
